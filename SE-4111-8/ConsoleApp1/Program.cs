@@ -1,4 +1,5 @@
 ﻿
+using System.Net.NetworkInformation;
 using System.Xml.Linq;
 
 namespace ConsoleApp1
@@ -8,6 +9,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
+            #region ლექცია 1
             //ტექსტური "Nika"
             // "asdasd"  'A' ???
 
@@ -82,14 +84,69 @@ namespace ConsoleApp1
             //byte age = Convert.ToByte(Console.ReadLine());
             ////byte age = byte.Parse(Console.ReadLine());
 
-            //Console.WriteLine($"Hello my name is {firstName} {lastName} I am {age} years old");
+            //Console.WriteLine($"Hello my name is {firstName} {lastName} I am {age} years old"); 
+            #endregion
+
+
+            //ტექსუტური: string = ""  char = ''
+            //მთელი რიცხვები: (byte,sbyte) (short ushort) (int uint) (long ulong)
+            //ათწილადი რიცხვები: float double decimal
+            //ლოგიკური : bool
+
+
+            //string x = "nia"; // ცვლადი
+            //x = "nika";
+
+            //const string x2 = "nia"; // კონსტანტა
+            //x = "nika";
+
+
+            //var name = 12; // არის დეველოპერის დამხმარე მინიჭება ხდება ტოლობის მარჯვინვ დწერილი მონაცმიდან გამომდინარე
+
+            //ცხადი cast - explicit cast
+            //არაცხადი cast - implicit cast
+            //არითმეტიკული გადავსება - Arithmetical overflow
+
+            //int x = 259;
+            //long y = x; //implicit cast
+
+
+            //მინიჭების ოპერატორი     =
+            // შედარების ოპერატორები  == > < >= <= != 
+            //არითმეტიკული           + - * /    += -= *= /=    ++ --
+            //დამხმარე ოპერატორები    && - და     || - ან                               & |
+
+
+            //Console.WriteLine(1 == 1); //True
+            //Console.WriteLine(1 > 1); // False
+            //Console.WriteLine(1 >= 1); // True
+            //Console.WriteLine(1 <= 1); // True
+            //Console.WriteLine(1 != 1); // False
+            //
+            //Console.WriteLine(1 + 1); // 2
+            //Console.WriteLine(1 - 1); // 0
+            //Console.WriteLine(1 / 1); // 1
+            //Console.WriteLine(1 * 1); // 1
+
+            //int x = 0;
+            //x += 1; // x = x + 1
+            //x -= 1; // x = x - 1
+            //x *= 1; // x = x * 1
+            //x /= 1; // x = x / 1
+            //int y = x++; // 0
+            //int y = ++x; // 1
+            //int y = --x; // -1
+            //int y = x--; // 0
+
+            //if (10 > 20 || 15 % 2 != 0)
+            //{
+            //}
+
+
+
+
+
         }
-
-
-
-
-
-
 
     }
 }
