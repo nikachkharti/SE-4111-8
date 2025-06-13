@@ -198,6 +198,12 @@ namespace ConsoleApp1
             //თუ ადამიანს არ არის ყავს ცხოველი don't have pet
 
 
+
+
+
+
+
+
             //Console.WriteLine($"Hello my name is {firstName} {lastName} I am {age}, my personal number is {personalNumber} have family and have pet");
             //Console.WriteLine($"Hello my name is {firstName} {lastName} I am {age}, my personal number is {personalNumber} don't have family and don't have pet");
         }
