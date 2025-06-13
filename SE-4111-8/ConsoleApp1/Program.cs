@@ -88,6 +88,8 @@ namespace ConsoleApp1
             #endregion
 
 
+
+            #region ლექცია 2
             //ტექსუტური: string = ""  char = ''
             //მთელი რიცხვები: (byte,sbyte) (short ushort) (int uint) (long ulong)
             //ათწილადი რიცხვები: float double decimal
@@ -173,39 +175,45 @@ namespace ConsoleApp1
             //    Console.WriteLine("yvela piroba mcdaria");
             //}
 
-            Console.Write("First name: ");
-            string firstName = Console.ReadLine();
+            //Console.Write("First name: ");
+            //string firstName = Console.ReadLine();
 
-            Console.Write("Last name: ");
-            string lastName = Console.ReadLine();
+            //Console.Write("Last name: ");
+            //string lastName = Console.ReadLine();
 
-            Console.Write("Personal number: ");
-            string personalNumber = Console.ReadLine();
+            //Console.Write("Personal number: ");
+            //string personalNumber = Console.ReadLine();
 
-            Console.Write("Age: ");
-            byte age = Convert.ToByte(Console.ReadLine());
+            //Console.Write("Age: ");
+            //byte age = Convert.ToByte(Console.ReadLine());
 
-            Console.Write("Is married: [Y/N]");
-            char isMarried = char.Parse(Console.ReadLine());
+            //Console.Write("Is married: [Y/N]");
+            //char isMarried = char.Parse(Console.ReadLine());
 
-            Console.Write("Have pet: [Y/N]");
-            char havePet = char.Parse(Console.ReadLine());
-
-            //თუ ადამი დაოჯახებულია დაბეჭდოს haveFamily
-            //თუ ადამი არ არის დაოჯახებული დაბეჭდოს don't Have family
-
-            //თუ ადამიანს ყავს ცხოველი have pet
-            //თუ ადამიანს არ არის ყავს ცხოველი don't have pet
+            //Console.Write("Have pet: [Y/N]");
+            //char havePet = char.Parse(Console.ReadLine());
 
 
+            //if ((havePet == 'y' || havePet == 'Y') && (isMarried == 'y' || isMarried == 'Y'))
+            //{
+            //    Console.WriteLine($"Hello my name is {firstName} {lastName} I am {age}, my personal number is {personalNumber} have family and have pet");
+            //}
+            //else if (havePet == 'y' || havePet == 'Y')
+            //{
+            //    Console.WriteLine($"Hello my name is {firstName} {lastName} I am {age}, my personal number is {personalNumber} have pet");
+            //}
+            //else if (isMarried == 'y' || isMarried == 'Y')
+            //{
+            //    Console.WriteLine($"Hello my name is {firstName} {lastName} I am {age}, my personal number is {personalNumber} have family");
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"Hello my name is {firstName} {lastName} I am {age}, my personal number is {personalNumber} dont' have family and pet");
+            //} 
+            #endregion
 
 
 
-
-
-
-            //Console.WriteLine($"Hello my name is {firstName} {lastName} I am {age}, my personal number is {personalNumber} have family and have pet");
-            //Console.WriteLine($"Hello my name is {firstName} {lastName} I am {age}, my personal number is {personalNumber} don't have family and don't have pet");
         }
 
     }
