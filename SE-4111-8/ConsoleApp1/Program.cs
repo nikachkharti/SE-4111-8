@@ -143,9 +143,63 @@ namespace ConsoleApp1
             //}
 
 
+            //•	შექმენით სარეგისტრაციო  კონსოლური აპლიკაცია, 
+            //    სადაც მომხმარებელს სთხოვთ რომ შემოიყვანოს 
+            //    ინფორმაცია საკუთარი თავის 
+            //    შესახებ(სახელი, გვარი, პირადი ნომერი, ასაკი, სიმაღლე, წონა, არის თუ არა დაოჯახებული, 
+            //        ჰყავს თუ არა ცხოველი) 
+            //    კონსოლიდან შემოყვანილი ინფორმაცია დაიმახსოვრეთ შესაბამის ცვლადში 
+            //    და საბოლოოდ მოახდინეთ ამ ინფორმაციის სრული რეზლიზება კონსოლში.
 
 
+            //if (1 == 2)
+            //{
+            //    Console.WriteLine("1 udris 1");
+            //}
+            //else if (1 == 3)
+            //{
+            //    Console.WriteLine("1 udris 3");
+            //}
+            //else if (1 == 4)
+            //{
+            //    Console.WriteLine("1 udris 4");
+            //}
+            //else if (1 == 5)
+            //{
+            //    Console.WriteLine("1 udris 5");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("yvela piroba mcdaria");
+            //}
 
+            Console.Write("First name: ");
+            string firstName = Console.ReadLine();
+
+            Console.Write("Last name: ");
+            string lastName = Console.ReadLine();
+
+            Console.Write("Personal number: ");
+            string personalNumber = Console.ReadLine();
+
+            Console.Write("Age: ");
+            byte age = Convert.ToByte(Console.ReadLine());
+
+            Console.Write("Is married: [Y/N]");
+            char isMarried = char.Parse(Console.ReadLine());
+
+            Console.Write("Have pet: [Y/N]");
+            char havePet = char.Parse(Console.ReadLine());
+
+            //თუ ადამი დაოჯახებულია დაბეჭდოს haveFamily
+            //თუ ადამი არ არის დაოჯახებული დაბეჭდოს don't Have family
+
+            //თუ ადამიანს ყავს ცხოველი have pet
+            //თუ ადამიანს არ არის ყავს ცხოველი don't have pet
+
+
+            //Console.WriteLine($"Hello my name is {firstName} {lastName} I am {age}, my personal number is {personalNumber} have family and have pet");
+            //Console.WriteLine($"Hello my name is {firstName} {lastName} I am {age}, my personal number is {personalNumber} don't have family and don't have pet");
         }
 
     }
