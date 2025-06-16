@@ -213,6 +213,209 @@ namespace ConsoleApp1
             #endregion
 
 
+            #region ლექცია 3
+
+
+            ////შეამოაყვანინეთ ერთი რიცხვი კონსოლიდან
+            //Console.Write("First Number: ");
+            //int firstNumber = int.Parse(Console.ReadLine());
+
+            ////შეამოაყვანინეთ მეორე რიცხვი კონსოლიდან
+            //Console.Write("Second Number: ");
+            //int secondNumber = int.Parse(Console.ReadLine());
+
+            ////შეამოაყვანინეთ ოპერაცია კონსოლიდან
+            //Console.Write("[+ - * /]");
+            //char operation = char.Parse(Console.ReadLine());
+
+
+            //switch (operation)
+            //{
+            //    case '+':
+            //        Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
+            //        break;
+            //    case '-':
+            //        Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
+            //        break;
+            //    case '*':
+            //        Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
+            //        break;
+            //    case '/':
+            //        Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
+            //        break;
+            //    default:
+            //        break;
+            //}
+
+
+
+
+            //შეამოწმეთ გადმოცემული პირობები და დაბეჭდეთ შესაბამისი შედეგი კონსოლში
+            //გამოიყენეთ switch case
+
+
+
+
+
+
+
+
+
+            //int number = int.Parse(Console.ReadLine());
+
+            //ტერნარი
+            //int result =
+            //    number % 2 == 0
+            //    ? number
+            //    : -1;
+
+
+            //int x = default;
+
+            //if (number % 2 == 0)
+            //{
+            //    x = number;
+            //}
+            //else
+            //{
+            //    x = -1;
+            //}
+
+
+            //Console.Write("[1-7]");
+            //byte day = byte.Parse(Console.ReadLine());
+
+
+            //switch (day)
+            //{
+            //    case 1:
+            //        Console.WriteLine("Monday");
+            //        break;
+            //    case 2:
+            //        Console.WriteLine("Tuesday");
+            //        break;
+            //    case 3:
+            //        Console.WriteLine("Wednesday");
+            //        break;
+            //    case 4:
+            //        Console.WriteLine("Thursday");
+            //        break;
+            //    case 5:
+            //        Console.WriteLine("Friday");
+            //        break;
+            //    case 6:
+            //        Console.WriteLine("Satuarday");
+            //        break;
+            //    case 7:
+            //        Console.WriteLine("Satuarday");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Incorrect day");
+            //        break;
+            //}
+
+
+
+
+            //აეიოუ
+            //char character = char.Parse(Console.ReadLine());
+
+            //switch (character)
+            //{
+            //    case 'a':
+            //    case 'e':
+            //    case 'i':
+            //    case 'o':
+            //    case 'u':
+            //        Console.WriteLine("Vowel");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Consonant");
+            //        break;
+            //}
+
+
+            //switch (character)
+            //{
+            //    case 'a':
+            //        Console.WriteLine("Vowel");
+            //        break;
+            //    case 'e':
+            //        Console.WriteLine("Vowel");
+            //        break;
+            //    case 'i':
+            //        Console.WriteLine("Vowel");
+            //        break;
+            //    case 'o':
+            //        Console.WriteLine("Vowel");
+            //        break;
+            //    case 'u':
+            //        Console.WriteLine("Vowel");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Consonant");
+            //        break;
+            //}
+
+
+
+
+            //if (character == 'a')
+            //{
+            //    Console.WriteLine("Vowel");
+            //}
+            //else if(character == 'e')
+            //{
+            //    Console.WriteLine("Vowel");
+            //}
+            //else if(character == 'i')
+            //{
+            //    Console.WriteLine("Vowel");
+            //}
+            //else if(character == 'o')
+            //{
+            //    Console.WriteLine("Vowel");
+            //}
+            //else if(character == 'u')
+            //{
+            //    Console.WriteLine("Vowel");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Consonant");
+            //}
+
+
+
+            //if
+            //(
+            //    character == 'a' ||
+            //    character == 'e' ||
+            //    character == 'i' ||
+            //    character == 'o' ||
+            //    character == 'u' ||
+            //    character == 'A' ||
+            //    character == 'E' ||
+            //    character == 'I' ||
+            //    character == 'O' ||
+            //    character == 'U'
+            //)
+            //{
+            //    Console.WriteLine("Vowel");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Consonant");
+            //}
+
+
+
+
+
+
+
+
+            #endregion
 
         }
 
