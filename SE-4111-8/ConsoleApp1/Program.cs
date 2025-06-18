@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Net.NetworkInformation;
 using System.Xml.Linq;
 
@@ -86,7 +87,6 @@ namespace ConsoleApp1
 
             //Console.WriteLine($"Hello my name is {firstName} {lastName} I am {age} years old"); 
             #endregion
-
 
 
             #region ლექცია 2
@@ -412,11 +412,150 @@ namespace ConsoleApp1
 
 
 
+            //2.ლოგინის ვალიდაცია: ააწყეთ ლოგინის ფორმა სადაც მომხმარებელს სთხოვთ რომ შემოიყვანოთ email და პაროლი.
+            //    თქვენი დავალებაა რომ შემოყვანილი email და პროლი იყოს ვალიდური, მაგალითად email 
+            //    შეიცავდეს შესაბამის სიმბოლოებს, 
+            //    და პაროლი შეიცავდეს დიდ/ 
+            //    პატარა ასოებს რიცხვებს და სპეციალურ სიმბოლოებს, აპლიკაციის რეალიზება უნდა მოხდეს კონსოლში.
 
+
+
+            //int firstNumber = int.Parse(Console.ReadLine());
+            //int secondNumber = int.Parse(Console.ReadLine());
+            //char operation = char.Parse(Console.ReadLine());
+
+            //if (operation == '+' || operation == '-' || operation == '*' || operation == '/')
+            //{
+            //    Console.WriteLine("GOOD");
+            //}
+
+
+
+
+
+
+            //Console.Write("Email: ");
+            //string email = Console.ReadLine();
+
+            //Console.Write("Password: ");
+            //string password = Console.ReadLine();
+
+
+            //if (email.Contains('@') && email.Contains('.') && password.Any(x=>x))
+            //{
+            //    Console.WriteLine($"Email: {email}, Password: {password}");
+            //}
 
 
             #endregion
 
+
+            #region ლექცია 4
+
+            //while(3) | do while(4) | for(2) | foreach (1)
+
+
+            //int i = 0;
+
+            //while (i < 3)
+            //{
+            //    Console.WriteLine("NIKA");
+            //    i++;
+            //}
+
+
+            //int i = 0;
+
+            //do
+            //{
+            //    Console.WriteLine("NIKA");
+            //    i++;
+            //}
+            //while (i <= 3);
+
+
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Console.WriteLine("NIKA");
+            //}
+
+
+            //int[] ar = [1, 2, 3];
+            //foreach (var item in ar)
+            //{
+            //    Console.Write(item);
+            //}
+
+
+
+
+
+
+            //1.Print numbers from 1 to 10
+            //for (int i = 1; i <= 10; i++)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+
+
+            //2.Print even numbers from 1 to 20
+
+            //for (int i = 1; i <= 20; i++)
+            //{
+            //    if (i % 2 == 0)
+            //    {
+            //        Console.WriteLine(i);
+            //    }
+            //}
+
+
+            //for (int i = 0; i <= 20; i += 2)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+
+
+            //3.Sum of numbers from 1 to 100
+
+            //int sum = 0;
+            //for (int i = 1; i <= 100; i++)
+            //{
+            //    sum += i;
+            //}
+
+            //Console.WriteLine(sum);
+
+
+
+            //TODO 4.Factorial of number
+
+
+
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    if (i == 3)
+            //    {
+            //        //break;
+            //        continue;
+            //    }
+
+            //    Console.WriteLine(i);
+            //}
+
+
+            //for (int i = 1; i <= 9; i++)
+            //{
+            //    for (int j = 1; j <= 9; j++)
+            //    {
+            //        Console.WriteLine($"{i}*{j} = {i * j}");
+            //    }
+            //}
+
+
+
+            #endregion
 
 
         }
