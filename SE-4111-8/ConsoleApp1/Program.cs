@@ -616,6 +616,103 @@ namespace ConsoleApp1
 
 
 
+            //for (int i = 10; i >= 1; i--)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+
+            //int i = 10;
+            //while (i >= 1)
+            //{
+            //    Console.WriteLine(i);
+            //    i--;
+            //}
+
+            #endregion
+
+
+            #region ლექცია 5
+
+            //Exception - გამონაკლისი
+
+
+
+            //1.ექსეფშენის დამუშავება try catch ის გამოყენებით
+            //try
+            //{
+            //    // წერ კოდს სადაც პოტენციურად ელოდები exception  - ს
+
+            //    int firstNumber = 10;
+            //    int secondNumber = 0;
+
+            //    int result = firstNumber / secondNumber;
+            //}
+            //catch(DivideByZeroException divideByzeroException)
+            //{
+            //    // წერ ლოგიკას რა მოხდეს იმ შემთხვევაში თუ exception მოხდა
+            //    Console.WriteLine(divideByzeroException.Message);
+            //}
+
+
+
+
+            //2.ექსეფშენის გასროლის ლოგიკა throw new - ს გამოყენებით
+            //int number = int.Parse(Console.ReadLine());
+
+            //if (number >= 1 && number <= 7)
+            //{
+            //    Console.WriteLine("OK");
+            //}
+            //else
+            //{
+            //    throw new ArgumentOutOfRangeException("Argument must be between 1 to 7");
+            //}
+
+
+
+            //try
+            //{
+            //    int number = int.Parse(Console.ReadLine());
+            //    if (number >= 1 && number <= 7)
+            //    {
+            //        if (number == 5)
+            //        {
+            //            throw new ArgumentException("Number can't be 5");
+            //        }
+
+            //        Console.WriteLine("OK");
+            //    }
+            //    else
+            //    {
+            //        throw new ArgumentOutOfRangeException("Argument must be between 1 to 7");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine($"Sorry but {ex.Message}");
+            //}
+            //catch (ArgumentException argumentException)
+            //{
+            //    Console.WriteLine($"Sorry but {argumentException.Message}");
+            //}
+            //catch (ArgumentOutOfRangeException argumentOutOfRangeException)
+            //{
+            //    Console.WriteLine($"Sorry but {argumentOutOfRangeException.Message}");
+            //}
+
+
+
+
+
+            //1.წინა გაკვეთილზე დაწყებული დავალება, კონსოლური კალკულატორი გადააკეთეთ იმგვარად რომ აპლიკაციის მუშაობა არ იყოს ერთჯერადი (იყოს სულ გაშვებული)
+            //2.აპლიკაციას X ღილაკის შემოყვანის შემთხვევაში უნდა ჰქონდეს გათიშვის ფუნქცია
+            //3.არასწორი Input - ების ვალიდაცია არის სავალდებულო Exception - ების გამოყენებით.
+
+
+
+
+
             #endregion
 
 
