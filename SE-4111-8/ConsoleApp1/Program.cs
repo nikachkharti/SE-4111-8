@@ -555,6 +555,67 @@ namespace ConsoleApp1
 
 
 
+
+            //დავალება 1: ლუწი რიცხვების ჩვენება სწორ დიაპაზონში
+
+            //Console.Write("First Number: ");
+            //int number1 = int.Parse(Console.ReadLine());
+
+            //Console.Write("Second Number: ");
+            //int number2 = int.Parse(Console.ReadLine());
+
+            //if (number2 < number1)
+            //{
+            //    int temp = number2;
+            //    number2 = number1;
+            //    number1 = temp;
+            //}
+
+
+            //for (int i = number1; i <= number2; i++)
+            //{
+            //    if (i % 2 == 0)
+            //    {
+            //        Console.Write(i + " ");
+            //    }
+            //}
+
+            //Console.WriteLine(); // ახალ ხაზზე გადასვლა
+
+
+
+
+
+            //დავალება 2: ნახევარ პირამიდა *-ებით
+
+            //int rows = int.Parse(Console.ReadLine());
+
+            //for (int i = 1; i <= rows; i++)
+            //{
+            //    for (int j = 1; j <= i; j++)
+            //    {
+            //        Console.Write("*");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+            //დავალება 3: ციფრებით შექმნილი პირამიდა
+            //int n = int.Parse(Console.ReadLine());
+
+            //for (int i = 1; i <= n; i++)
+            //{
+            //    for (int j = 1; j <= i; j++)
+            //    {
+            //        Console.Write(i);
+            //    }
+
+            //    Console.WriteLine();
+            //}
+
+
+
+
             #endregion
 
 
