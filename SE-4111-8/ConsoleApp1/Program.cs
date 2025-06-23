@@ -788,6 +788,45 @@ namespace ConsoleApp1
             //Console.WriteLine(ar[2]);
 
 
+
+            int[] array = [10, 5, 3, 4, 18];
+
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[j] < array[i])
+                    {
+                        int t = array[j];
+                        array[j] = array[i];
+                        array[i] = t;
+                    }
+                }
+            }
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine(array[i]);
+            }
+
+            //int min = array[0];
+
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    if (array[i] < min)
+            //    {
+            //        min = array[i];
+            //    }
+            //}
+
+
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    Console.WriteLine(array[i]);
+            //}
+
+
+
             #endregion
 
 
