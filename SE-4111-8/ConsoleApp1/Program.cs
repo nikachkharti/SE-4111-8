@@ -710,13 +710,57 @@ namespace ConsoleApp1
             //3.არასწორი Input - ების ვალიდაცია არის სავალდებულო Exception - ების გამოყენებით.
 
 
+            //while (true)
+            //{
+            //    Console.Write("First number: ");
+            //    if (!int.TryParse(Console.ReadLine(), out var firstNumber))
+            //        continue;
+
+            //    Console.Write("Second number: ");
+            //    if (!int.TryParse(Console.ReadLine(), out var secondNumber))
+            //        continue;
+
+            //    Console.Write("[+ - * /]: ");
+            //    if (!char.TryParse(Console.ReadLine(), out var operation))
+            //        continue;
+
+
+            //    switch (operation)
+            //    {
+            //        case '+':
+            //            Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
+            //            break;
+            //        case '-':
+            //            Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
+            //            break;
+            //        case '*':
+            //            Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
+            //            break;
+            //        case '/':
+            //            Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
+            //            break;
+            //    }
+
+            //    Console.Write("Exit: [X] ");
+            //    char.TryParse(Console.ReadLine(), out var exit);
+
+            //    if (exit == 'X')
+            //        break;
+            //}
+
+
 
 
 
             #endregion
 
 
+
+
         }
+
+
+
 
     }
 }
