@@ -718,7 +718,7 @@ namespace ConsoleApp1
 
             #region ALGORITHMS
 
-            Reverse();
+
 
 
             #endregion
@@ -727,9 +727,165 @@ namespace ConsoleApp1
 
 
 
-        private static void Reverse()
+        private static Dictionary<int, int> CountOccurrences(int[] array)
+        {
+            Dictionary<int, int> counts = new Dictionary<int, int>();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                int key = array[i];
+
+                if (counts.ContainsKey(key))
+                {
+                    counts[key]++;
+                }
+                else
+                {
+                    counts[key] = 1;
+                }
+            }
+
+            return counts;
+        }
+        private static bool IsPalindrome(int[] array)
+        {
+            int start = 0;
+            int end = array.Length - 1;
+
+            while (start < end)
+            {
+                if (array[start] != array[end])
+                    return false;
+
+                start++;
+                end--;
+            }
+
+            return true;
+        }
+        private static int? FindSecondLargest(int[] array)
+        {
+            if (array == null || array.Length < 2)
+                return null;
+
+            int? firstMax = null;
+            int? secondMax = null;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                int current = array[i];
+
+                if (firstMax == null || current > firstMax)
+                {
+                    secondMax = firstMax;
+                    firstMax = current;
+                }
+                else if ((secondMax == null || current > secondMax) && current != firstMax)
+                {
+                    secondMax = current;
+                }
+            }
+
+            return secondMax;
+        }
+        private static int[] Sort(int[] ar)
+        {
+            for (int i = 0; i < ar.Length - 1; i++)
+            {
+                for (int j = i + 1; j < ar.Length; j++)
+                {
+                    if (ar[j] < ar[i])
+                    {
+                        int temp = ar[j];
+                        ar[j] = ar[i];
+                        ar[i] = temp;
+                    }
+                }
+            }
+
+            return ar;
+        }
+        private static int[] FindDistinctElements(int[] ar)
+        {
+            List<int> result = new List<int>();
+
+            for (int i = 0; i < ar.Length; i++)
+            {
+                bool isDuplicate = false;
+
+                for (int j = 0; j < result.Count; j++)
+                {
+                    if (ar[i] == result[j])
+                    {
+                        isDuplicate = true;
+                        break;
+                    }
+                }
+
+                if (!isDuplicate)
+                {
+                    result.Add(ar[i]);
+                }
+            }
+
+            return result.ToArray();
+        }
+        private static void FindUniqueElements(int[] ar)
+        {
+            for (int i = 0; i < ar.Length; i++)
+            {
+                bool isUnique = true;
+
+                for (int j = 0; j < ar.Length; j++)
+                {
+                    if (i != j && ar[i] == ar[j])
+                    {
+                        isUnique = false;
+                        break;
+                    }
+                }
+
+                if (isUnique)
+                {
+                    Console.WriteLine(ar[i]);
+                }
+
+            }
+        }
+        private static int[] Copy(int[] source)
+        {
+            int[] destionation = new int[source.Length];
+
+            for (int i = 0; i < source.Length; i++)
+            {
+                destionation[i] = source[i];
+            }
+
+            return destionation;
+        }
+        private static void CountEventAndOddElements()
         {
             int[] ar = [1, 2, 3, 4];
+            int evens = 0;
+            int odds = 0;
+
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] % 2 == 0)
+                {
+                    evens++;
+                }
+                else if (ar[i] % 2 != 0)
+                {
+                    odds++;
+                }
+            }
+
+            Console.WriteLine($"Evens: {evens}");
+            Console.WriteLine($"Odds: {odds}");
+        }
+        private static int[] Reverse(int[] ar)
+        {
             int start = 0;
             int end = ar.Length - 1;
 
@@ -742,8 +898,9 @@ namespace ConsoleApp1
                 start++;
                 end--;
             }
-        }
 
+            return ar;
+        }
         private static void Min()
         {
             int[] ar = [5, 8, 2, 9, 1];
@@ -756,7 +913,6 @@ namespace ConsoleApp1
                 }
             }
         }
-
         private static void Max()
         {
             int[] ar = [5, 8, 2, 9, 1];
@@ -769,7 +925,6 @@ namespace ConsoleApp1
                 }
             }
         }
-
         private static void Sum()
         {
             int[] ar = [1, 2, 3, 4];
@@ -779,5 +934,24 @@ namespace ConsoleApp1
                 sum += ar[i];
             }
         }
+        private static int CustomLength(int[] array)
+        {
+            int count = 0;
+
+            try
+            {
+                while (true)
+                {
+                    int temp = array[count];
+                    count++;
+                }
+            }
+            catch (IndexOutOfRangeException)
+            {
+            }
+
+            return count;
+        }
+
     }
 }
