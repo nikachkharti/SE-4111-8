@@ -9,7 +9,6 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-
             #region ლექცია 1
             //ტექსტური "Nika"
             // "asdasd"  'A' ???
@@ -716,7 +715,69 @@ namespace ConsoleApp1
             #endregion
 
 
+
+            #region ALGORITHMS
+
+            Reverse();
+
+
+            #endregion
+
         }
 
+
+
+        private static void Reverse()
+        {
+            int[] ar = [1, 2, 3, 4];
+            int start = 0;
+            int end = ar.Length - 1;
+
+            while (start < end)
+            {
+                int temp = ar[start];
+                ar[start] = ar[end];
+                ar[end] = temp;
+
+                start++;
+                end--;
+            }
+        }
+
+        private static void Min()
+        {
+            int[] ar = [5, 8, 2, 9, 1];
+            int min = ar[0];
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] < min)
+                {
+                    min = ar[i];
+                }
+            }
+        }
+
+        private static void Max()
+        {
+            int[] ar = [5, 8, 2, 9, 1];
+            int max = ar[0];
+            for (int i = 0; i < ar.Length; i++)
+            {
+                if (ar[i] > max)
+                {
+                    max = ar[i];
+                }
+            }
+        }
+
+        private static void Sum()
+        {
+            int[] ar = [1, 2, 3, 4];
+            int sum = 0;
+            for (int i = 0; i < ar.Length; i++)
+            {
+                sum += ar[i];
+            }
+        }
     }
 }
