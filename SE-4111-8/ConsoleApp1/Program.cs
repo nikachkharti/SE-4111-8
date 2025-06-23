@@ -755,6 +755,40 @@ namespace ConsoleApp1
             #endregion
 
 
+            #region ლექცია 6
+
+
+            //int[] ar = new int[3] { 11, 22, 33, };
+
+            //int[] ar = new int[3];
+            //ar[0] = 11;
+            //ar[1] = 22;
+            //ar[2] = 33;
+
+
+
+            //int[] ar = { 11, 12, 33 };
+
+
+            //int[] ar = [11, 12, 33, 44];
+
+
+            //string firstPersonName = "Nika";
+            //string[] names = [firstPersonName, "asd"];
+
+
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Console.WriteLine(ar[i]);
+            //}
+
+
+            //Console.WriteLine(ar[0]);
+            //Console.WriteLine(ar[1]);
+            //Console.WriteLine(ar[2]);
+
+
+            #endregion
 
 
         }
