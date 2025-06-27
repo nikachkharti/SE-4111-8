@@ -1,9 +1,4 @@
-﻿
-using System;
-using System.Net.NetworkInformation;
-using System.Xml.Linq;
-
-namespace ConsoleApp1
+﻿namespace ConsoleApp1
 {
     internal class Program
     {
@@ -632,6 +627,7 @@ namespace ConsoleApp1
             #endregion
 
 
+
             #region ლექცია 6
 
             //Exception - გამონაკლისი
@@ -755,6 +751,8 @@ namespace ConsoleApp1
             #endregion
 
 
+
+
             #region ლექცია 7
 
 
@@ -847,9 +845,9 @@ namespace ConsoleApp1
 
 
 
-            Random random = new Random();
+            //Random random = new Random();
 
-            int[] randomArray = { 1, 1, 1, 3, 4, 5 };
+            //int[] randomArray = { 1, 1, 1, 3, 4, 5 };
             //for (int i = 0; i < randomArray.Length; i++)
             //{
             //    randomArray[i] = random.Next(1, 101);
@@ -928,9 +926,59 @@ namespace ConsoleApp1
 
 
 
+            int[] ar = { 1, 2, 3 };
+
+            int firstNumber = GetFirstNumber(ar);
+            int secondNumber = GetSecondNumber(ar);
+
+
+
+
             #endregion
 
+
+
         }
+
+
+        static int GetFirstNumber(int[] arrayArgument)
+        {
+            return arrayArgument[0];
+        }
+
+        static int GetSecondNumber(int[] arrayArgument)
+        {
+            return arrayArgument[1];
+        }
+
+
+        //static string WriteInConsole(string fullName) //<----- გადაეცემა პარამეტრები რომლის დამუშავებაც ფუნქციაში შესაძლებელია
+        //{
+        //    return fullName;
+        //}
+
+
+
+        //static void WriteInFile()
+        //{
+        //    File.WriteAllText(@"../../../name.txt", "Nika Puturidze");
+        //}
+
+
+
+        //აბრუნებს ტექსტს ამიტომ დასაბრნუნებელ ტიპში მიეთითება STRING
+        //static string WriteInConsole()
+        //{
+        //    return "Nika Puturidze";
+        //}
+
+
+
+        //არ აბრუნებს არაფერს ამიტომ დასაბრუნებელ ტიპში მიეთთება VOID
+        //static void WriteInConsole()
+        //{
+        //    Console.WriteLine("Nika Puturidze");
+        //}
 
 
     }
