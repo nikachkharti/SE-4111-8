@@ -1,16 +1,11 @@
-﻿
-using System;
-using System.Net.NetworkInformation;
-using System.Xml.Linq;
-
-namespace ConsoleApp1
+﻿namespace ConsoleApp1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
 
-            #region ლექცია 1
+            #region ლექცია 2
             //ტექსტური "Nika"
             // "asdasd"  'A' ???
 
@@ -89,7 +84,7 @@ namespace ConsoleApp1
             #endregion
 
 
-            #region ლექცია 2
+            #region ლექცია 3
             //ტექსუტური: string = ""  char = ''
             //მთელი რიცხვები: (byte,sbyte) (short ushort) (int uint) (long ulong)
             //ათწილადი რიცხვები: float double decimal
@@ -213,7 +208,7 @@ namespace ConsoleApp1
             #endregion
 
 
-            #region ლექცია 3
+            #region ლექცია 4
 
 
             ////შეამოაყვანინეთ ერთი რიცხვი კონსოლიდან
@@ -450,7 +445,7 @@ namespace ConsoleApp1
             #endregion
 
 
-            #region ლექცია 4
+            #region ლექცია 5
 
             //while(3) | do while(4) | for(2) | foreach (1)
 
@@ -632,7 +627,8 @@ namespace ConsoleApp1
             #endregion
 
 
-            #region ლექცია 5
+
+            #region ლექცია 6
 
             //Exception - გამონაკლისი
 
@@ -755,7 +751,9 @@ namespace ConsoleApp1
             #endregion
 
 
-            #region ლექცია 6
+
+
+            #region ლექცია 7
 
 
             //int[] ar = new int[3] { 11, 22, 33, };
@@ -830,9 +828,157 @@ namespace ConsoleApp1
             #endregion
 
 
+
+            #region ლექცია 8
+
+            //[] აქვს ინდექსის ფრჩხილები.
+            //აქვს ფიქსირებული ზომა.
+
+            //int[] collection = { 11, 22, 33 };
+
+            //foreach (var item in collection)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+
+
+
+            //Random random = new Random();
+
+            //int[] randomArray = { 1, 1, 1, 3, 4, 5 };
+            //for (int i = 0; i < randomArray.Length; i++)
+            //{
+            //    randomArray[i] = random.Next(1, 101);
+            //}
+
+
+            //1.დაწერეთ კოდი რომელიც შეაჯამებს მასივის ყველა ელემენტს
+            //int summary = 0;
+            //for (int i = 0; i < randomArray.Length; i++)
+            //{
+            //    //summary = summary + randomArray[i]; // გრძელი ჩანაწერი
+            //    summary += randomArray[i]; // მოკლე ჩანაწერი
+            //}
+
+
+
+            //2.დაწერეთ კოდი რომელიც მოძებმის მასივის ზომას length - ის გამოყენების გარეშე
+
+            //int length = 0;
+
+            //try
+            //{
+            //    while (true)
+            //    {
+            //        int temp = randomArray[length];
+            //        length++;
+            //    }
+            //}
+            //catch (IndexOutOfRangeException)
+            //{
+            //    Console.WriteLine(length);
+            //}
+
+            //foreach (var item in randomArray)
+            //{
+            //    length++;
+            //}
+
+
+            //3. დაწერეთ კოდი რომელიც დაბეჭდავს მასივს უკუღმა
+
+            //for (int i = randomArray.Length - 1; i >= 0; i--)
+            //{
+            //    Console.WriteLine(randomArray[i]);
+            //}
+
+
+            //4. დაწერეთ კოდი რომელიც მასივის ყველა ელემენტს გადააკოპირებს მერე მასივში
+
+            //int[] randomArray2 = new int[randomArray.Length];
+
+            //for (int i = 0; i < randomArray.Length; i++)
+            //{
+            //    randomArray2[i] = randomArray[i];
+            //}
+
+
+            //5. დაწერეთ კოდი რომელიც მოძებნის მასივის უნიკალურ ელემენტებს
+
+            //for (int i = 0; i < randomArray.Length; i++)
+            //{
+            //    bool isUnique = true;
+
+            //    for (int j = 0; j < randomArray.Length; j++)
+            //    {
+            //        if (i != j && randomArray[i] == randomArray[j])
+            //        {
+            //            isUnique = false;
+            //            break;
+            //        }
+            //    }
+
+            //    if (isUnique)
+            //        Console.WriteLine(randomArray[i]);
+            //}
+
+
+
+            int[] ar = { 1, 2, 3 };
+
+            int firstNumber = GetFirstNumber(ar);
+            int secondNumber = GetSecondNumber(ar);
+
+
+
+
+            #endregion
+
+
+
         }
 
 
+        static int GetFirstNumber(int[] arrayArgument)
+        {
+            return arrayArgument[0];
+        }
+
+        static int GetSecondNumber(int[] arrayArgument)
+        {
+            return arrayArgument[1];
+        }
+
+
+        //static string WriteInConsole(string fullName) //<----- გადაეცემა პარამეტრები რომლის დამუშავებაც ფუნქციაში შესაძლებელია
+        //{
+        //    return fullName;
+        //}
+
+
+
+        //static void WriteInFile()
+        //{
+        //    File.WriteAllText(@"../../../name.txt", "Nika Puturidze");
+        //}
+
+
+
+        //აბრუნებს ტექსტს ამიტომ დასაბრნუნებელ ტიპში მიეთითება STRING
+        //static string WriteInConsole()
+        //{
+        //    return "Nika Puturidze";
+        //}
+
+
+
+        //არ აბრუნებს არაფერს ამიტომ დასაბრუნებელ ტიპში მიეთთება VOID
+        //static void WriteInConsole()
+        //{
+        //    Console.WriteLine("Nika Puturidze");
+        //}
 
 
     }
