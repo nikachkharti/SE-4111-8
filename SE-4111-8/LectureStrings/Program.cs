@@ -88,6 +88,35 @@ namespace LectureStrings
 
             #endregion
 
+
+            //var spaces = ContainsSymbol("Nika Chkartishivli", 'I');
         }
+
+
+        //static int CountSymbols(string argument, char symbol)
+        //{
+        //    int spaces = 0;
+
+        //    for (int i = 0; i < argument.Length; i++)
+        //    {
+        //        if (char.ToLower(argument[i]) == Char.ToLower(symbol))
+        //            spaces++;
+        //    }
+
+        //    return spaces;
+        //}
+
+        //static bool ContainsSymbol(string argument, char symbol)
+        //{
+        //    return argument.Contains(symbol);
+
+        //    //if (result)
+        //    //    return true;
+        //    //return false;
+
+
+        //    //return result ? true : false; // ტერნარი
+        //}
+
     }
 }
