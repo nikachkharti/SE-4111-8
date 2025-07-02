@@ -1,73 +1,54 @@
 ﻿namespace LectureOOP
 {
-    public class Person
-    {
-        public string name;
-        public int age;
-
-        //კონსტრუქტორი
-        public Person(string name, int age)
-        {
-            this.name = name;
-            this.age = age;
-        }
-
-        //კონსტრუქტორი
-        public Person()
-        {
-        }
-
-        //კონსტრუქტორი
-        public Person(int age)
-        {
-            this.age = age;
-        }
-
-        public void Walk()
-        {
-            Console.WriteLine($"{name} WALKING...");
-        }
-
-        public void Talk()
-        {
-            Console.WriteLine($"My Name is {name} I am {age} years old");
-        }
-    }
-
-
     internal class Program
     {
         static void Main(string[] args)
         {
 
-            Person nikasObj = new Person() /*<--კონსტრუქტორი*/;
-            nikasObj.name = "Nika";
-            nikasObj.age = 16;
+            #region CLASSWORK
 
-            nikasObj.Walk();
-            nikasObj.Talk();
+            /*
+                საკლასო: 
+                შექმენით კლასი რიმლითაც აღწერთ საკუთარ თავს. კლასს უნდა ჰქოონდეს შემდეგი 
+                ინფორმაცია თქვენი სახელი,გვარი,ასაკი,პირადი ნომერი,ტელეფონის 
+                ნომერი,ელ-ფოსტა.კლასი ინფორმაციას უნდა იღებდეს კონსტრუქტორიდან.
+                მოახდინეთ თქვენი კლასის დემონსტრირება კონსოლში.             
+             */
 
 
-            Person giorgisObj = new Person() /*<--კონსტრუქტორი*/
-            {
-                name = "Giorgi",
-                age = 20
-            };
-            giorgisObj.Walk();
-            giorgisObj.Talk();
+            //Human nika = new Human("Nika", "Chkhartishvili", 30, "01024087458", "557889966", "nika@gmail.com");
+            //Console.WriteLine(nika.Talk());
 
 
 
-            Person elenesObj = new Person("Elene", 25); /*<--კონსტრუქტორი*/
-            elenesObj.Walk();
-            elenesObj.Talk();
+            //Person nikasObj = new Person() /*<--კონსტრუქტორი*/;
+            //nikasObj.name = "Nika";
+            //nikasObj.age = 16;
+
+            //nikasObj.Walk();
+            //nikasObj.Talk();
 
 
-            Person davitisObj = new Person(33); /*<--კონსტრუქტორი*/
-            davitisObj.name = "Daviti";
+            //Person giorgisObj = new Person() /*<--კონსტრუქტორი*/
+            //{
+            //    name = "Giorgi",
+            //    age = 20
+            //};
+            //giorgisObj.Walk();
+            //giorgisObj.Talk();
 
-            davitisObj.Walk();
-            davitisObj.Talk();
+
+
+            //Person elenesObj = new Person("Elene", 25); /*<--კონსტრუქტორი*/
+            //elenesObj.Walk();
+            //elenesObj.Talk();
+
+
+            //Person davitisObj = new Person(33); /*<--კონსტრუქტორი*/
+            //davitisObj.name = "Daviti";
+
+            //davitisObj.Walk();
+            //davitisObj.Talk();
 
 
 
@@ -90,6 +71,7 @@
             ] 
 
              */
+            #endregion
 
         }
     }
