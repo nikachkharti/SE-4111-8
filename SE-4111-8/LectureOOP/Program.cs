@@ -1,4 +1,6 @@
-﻿namespace LectureOOP
+﻿using LectureOOP.BankModels;
+
+namespace LectureOOP
 {
 
     //•	საშინაო: დაწერეთ ანგარიშს კლასი, რომელსაც ექნება
@@ -95,16 +97,45 @@
             ] 
 
              */
+
+
+            Client mariam = new Client()
+            {
+                FirstName = "Mariam",
+                LastName = "Pankelashvii",
+                PersonalNumber = "12345678945",
+                Account = new Account()
+                {
+                    Iban = "1234567894512345678945",
+                    Balance = 1100,
+                    Currency = "USD"
+                }
+            };
+
+
+            Client tornike = new();
+            tornike.FirstName = "Tornike";
+            tornike.LastName = "Brokishvili";
+            tornike.PersonalNumber = "12345678942";
+            tornike.Account = new Account()
+            {
+                Iban = "1234567894212345678942",
+                Balance = 50,
+                Currency = "USD"
+            };
+
+
+
+
+
+
             #endregion
 
 
 
-            Client client = new Client();
-            client.Age = 20;
-            client.FullName = "Nika Futuridze";
 
 
-            Console.WriteLine($"Hello I am {client.FullName} {client.Age} years old");
+
 
         }
     }
