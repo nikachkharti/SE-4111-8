@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyBank.Service", "TinyBan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyBank.Tests", "TinyBank.Tests\TinyBank.Tests.csproj", "{9A809CB0-354E-4E8B-B5EF-FAB925E57A16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyBank.UI", "TinyBank.UI\TinyBank.UI.csproj", "{9AD92DB9-9C2C-4729-8A6D-C299036FD8A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{9A809CB0-354E-4E8B-B5EF-FAB925E57A16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A809CB0-354E-4E8B-B5EF-FAB925E57A16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A809CB0-354E-4E8B-B5EF-FAB925E57A16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AD92DB9-9C2C-4729-8A6D-C299036FD8A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AD92DB9-9C2C-4729-8A6D-C299036FD8A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AD92DB9-9C2C-4729-8A6D-C299036FD8A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AD92DB9-9C2C-4729-8A6D-C299036FD8A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +81,7 @@ Global
 		{5A8053E9-6537-4375-BF72-FA3DC8B3501A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{F4AF7318-51E1-42A5-AD45-FC6AFB2D7B3D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{9A809CB0-354E-4E8B-B5EF-FAB925E57A16} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{9AD92DB9-9C2C-4729-8A6D-C299036FD8A7} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {14FFAB81-3CFD-4DB5-A9BA-D81361CDD5C4}
