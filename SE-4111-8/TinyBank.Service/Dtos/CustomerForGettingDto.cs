@@ -10,5 +10,7 @@ namespace TinyBank.Service.Dtos
         public string PhoneNumber;
         public string Email;
         public CustomerType CustomerType;
+
+        public override string ToString() => $"{Id} {Name}";
     }
 }
