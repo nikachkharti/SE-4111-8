@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\TinyBank.Data\TinyBank.Data.csproj" />
+	  <ProjectReference Include="..\TinyBank.Models\TinyBank.Models.csproj" />
+	</ItemGroup>
+
+</Project>
