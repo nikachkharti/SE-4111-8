@@ -15,11 +15,7 @@ namespace TinyBank.Repository.Implementations
         }
 
         public List<Customer> GetCustomers() => _customers;
-        public Customer GetSingleCustomer(int id)
-        {
-            ValidateId(id);
-            return _customers.FirstOrDefault(c => c.Id == id);
-        }
+        public Customer GetSingleCustomer(int id) => _customers.FirstOrDefault(c => c.Id == id);
         public int AddCustomer(Customer newCustomer)
         {
             newCustomer.Id = _customers.Any() ? _customers.Max(c => c.Id) + 1 : 1;
@@ -30,9 +26,7 @@ namespace TinyBank.Repository.Implementations
         }
         public int DeleteCustomer(int id)
         {
-            ValidateId(id);
             var customer = _customers.FirstOrDefault(person => person.Id == id);
-            ValidateCustomerExists(customer);
 
             _customers.Remove(customer);
             SaveData();
@@ -55,21 +49,6 @@ namespace TinyBank.Repository.Implementations
 
 
         #region HELPERS
-
-        private void ValidateCustomerExists(Customer record)
-        {
-            if (record is null)
-            {
-                throw new NullReferenceException("Record not found");
-            }
-        }
-        private void ValidateId(int id)
-        {
-            if (id <= 0)
-            {
-                throw new ArgumentException($"Record with id {id} not found");
-            }
-        }
 
         private List<Customer> LoadData()
         {
