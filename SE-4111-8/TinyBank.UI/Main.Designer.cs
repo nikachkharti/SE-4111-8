@@ -30,6 +30,7 @@
         {
             customersList = new ListBox();
             modifyGroupBox = new GroupBox();
+            clearFormButton = new Button();
             deleteCustomerButton = new Button();
             updateCustomerButton = new Button();
             addCustomerButton = new Button();
@@ -43,7 +44,6 @@
             phoneNumberValue = new TextBox();
             identityNumberValue = new TextBox();
             nameValue = new TextBox();
-            clearFormButton = new Button();
             modifyGroupBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -81,6 +81,19 @@
             modifyGroupBox.TabStop = false;
             modifyGroupBox.Text = "Modify";
             // 
+            // clearFormButton
+            // 
+            clearFormButton.BackColor = Color.Gold;
+            clearFormButton.Cursor = Cursors.Hand;
+            clearFormButton.ForeColor = Color.Black;
+            clearFormButton.Location = new Point(285, 217);
+            clearFormButton.Name = "clearFormButton";
+            clearFormButton.Size = new Size(62, 34);
+            clearFormButton.TabIndex = 3;
+            clearFormButton.Text = "Clear";
+            clearFormButton.UseVisualStyleBackColor = false;
+            clearFormButton.Click += clearFormButton_Click;
+            // 
             // deleteCustomerButton
             // 
             deleteCustomerButton.BackColor = Color.Crimson;
@@ -92,6 +105,7 @@
             deleteCustomerButton.TabIndex = 3;
             deleteCustomerButton.Text = "Delete Customer";
             deleteCustomerButton.UseVisualStyleBackColor = false;
+            deleteCustomerButton.Click += deleteCustomerButton_Click;
             // 
             // updateCustomerButton
             // 
@@ -104,6 +118,7 @@
             updateCustomerButton.TabIndex = 3;
             updateCustomerButton.Text = "Update Customer";
             updateCustomerButton.UseVisualStyleBackColor = false;
+            updateCustomerButton.Click += updateCustomerButton_Click;
             // 
             // addCustomerButton
             // 
@@ -116,6 +131,7 @@
             addCustomerButton.TabIndex = 3;
             addCustomerButton.Text = "Add Customer";
             addCustomerButton.UseVisualStyleBackColor = false;
+            addCustomerButton.Click += addCustomerButton_Click;
             // 
             // customerTypeValue
             // 
@@ -200,19 +216,6 @@
             nameValue.Name = "nameValue";
             nameValue.Size = new Size(258, 31);
             nameValue.TabIndex = 0;
-            // 
-            // clearFormButton
-            // 
-            clearFormButton.BackColor = Color.Gold;
-            clearFormButton.Cursor = Cursors.Hand;
-            clearFormButton.ForeColor = Color.Black;
-            clearFormButton.Location = new Point(285, 217);
-            clearFormButton.Name = "clearFormButton";
-            clearFormButton.Size = new Size(62, 34);
-            clearFormButton.TabIndex = 3;
-            clearFormButton.Text = "Clear";
-            clearFormButton.UseVisualStyleBackColor = false;
-            clearFormButton.Click += clearFormButton_Click;
             // 
             // Main
             // 
