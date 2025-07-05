@@ -12,11 +12,14 @@ namespace TinyBank.Repository.Implementations
         {
             _filePath = filePath;
             _customers = LoadData();
-
         }
 
         public List<Customer> GetCustomers() => _customers;
-        public Customer GetSingleCustomer(int id) => _customers.FirstOrDefault(c => c.Id == id);
+        public Customer GetSingleCustomer(int id)
+        {
+            ValidateId(id);
+            return _customers.FirstOrDefault(c => c.Id == id);
+        }
         public int AddCustomer(Customer newCustomer)
         {
             newCustomer.Id = _customers.Any() ? _customers.Max(c => c.Id) + 1 : 1;
@@ -27,13 +30,12 @@ namespace TinyBank.Repository.Implementations
         }
         public int DeleteCustomer(int id)
         {
+            ValidateId(id);
             var customer = _customers.FirstOrDefault(person => person.Id == id);
+            ValidateCustomerExists(customer);
 
-            if (customer != null)
-            {
-                _customers.Remove(customer);
-                SaveData();
-            }
+            _customers.Remove(customer);
+            SaveData();
 
             return customer.Id;
         }
@@ -53,6 +55,22 @@ namespace TinyBank.Repository.Implementations
 
 
         #region HELPERS
+
+        private void ValidateCustomerExists(Customer record)
+        {
+            if (record is null)
+            {
+                throw new NullReferenceException("Record not found");
+            }
+        }
+        private void ValidateId(int id)
+        {
+            if (id <= 0)
+            {
+                throw new ArgumentException($"Record with id {id} not found");
+            }
+        }
+
         private List<Customer> LoadData()
         {
             if (!File.Exists(_filePath))
@@ -62,6 +80,7 @@ namespace TinyBank.Repository.Implementations
 
             using (var reader = new StreamReader(_filePath))
             {
+                reader.ReadLine(); // Skip the line 1
                 string line = string.Empty;
 
                 while ((line = reader.ReadLine()) != null)
@@ -87,7 +106,9 @@ namespace TinyBank.Repository.Implementations
         }
         private Customer FromCsv(string customer)
         {
-            var separatedCustomer = customer.Split(',', StringSplitOptions.RemoveEmptyEntries);
+            var separatedCustomer = customer
+                .Split(',', StringSplitOptions.RemoveEmptyEntries);
+
             Customer result = new();
 
             if (separatedCustomer.Length != 6)
