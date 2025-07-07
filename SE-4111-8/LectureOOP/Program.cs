@@ -98,34 +98,42 @@ namespace LectureOOP
 
              */
 
-
-            Client mariam = new Client()
+            try
             {
-                FirstName = "Mariam",
-                LastName = "Pankelashvii",
-                PersonalNumber = "12345678945",
-                Account = new Account()
+
+                Client mariam = new Client()
                 {
-                    Iban = "1234567894512345678945",
-                    Balance = 1100,
+                    FirstName = "Mariam",
+                    LastName = "Pankelashvii",
+                    PersonalNumber = "12345678945",
+                    Account = new Account()
+                    {
+                        Iban = "1234567894512345678945",
+                        Balance = 1100,
+                        Currency = "USD"
+                    }
+                };
+
+                mariam.Withdraw(50000);
+
+
+                Client tornike = new();
+                tornike.FirstName = "Tornike";
+                tornike.LastName = "Brokishvili";
+                tornike.PersonalNumber = "12345678942";
+                tornike.Account = new Account()
+                {
+                    Iban = "1234567894212345678942",
+                    Balance = 50,
                     Currency = "USD"
-                }
-            };
+                };
 
-
-            Client tornike = new();
-            tornike.FirstName = "Tornike";
-            tornike.LastName = "Brokishvili";
-            tornike.PersonalNumber = "12345678942";
-            tornike.Account = new Account()
+                //mariam.Transfer(50000, tornike.Account);
+            }
+            catch (Exception ex)
             {
-                Iban = "1234567894212345678942",
-                Balance = 50,
-                Currency = "USD"
-            };
-
-
-
+                Console.WriteLine(ex.Message);
+            }
 
 
 

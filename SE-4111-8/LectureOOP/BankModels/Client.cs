@@ -1,4 +1,6 @@
-﻿namespace LectureOOP.BankModels
+﻿using LectureOOP.Exceptions;
+
+namespace LectureOOP.BankModels
 {
     public class Client
     {
@@ -19,6 +21,36 @@
             }
         }
 
+
+        public void Deposit(decimal amount)
+        {
+            Account.Balance += amount;
+        }
+
+        public void Withdraw(decimal amount)
+        {
+            if (Account.Balance >= amount)
+            {
+                Account.Balance -= amount;
+            }
+            else
+            {
+                throw new InnsuficentFundsException("ARASAKMARISI TANXA");
+            }
+        }
+
+        public void Transfer(decimal amount, Account destination)
+        {
+            if (amount <= Account.Balance)
+            {
+                Account.Balance -= amount;
+                destination.Balance += amount;
+            }
+            else
+            {
+                throw new InnsuficentFundsException("ARASAKMARISI TANXA");
+            }
+        }
 
 
         #region CLASSWORK
