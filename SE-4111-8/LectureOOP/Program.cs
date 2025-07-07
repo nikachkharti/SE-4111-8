@@ -1,4 +1,5 @@
 ﻿using LectureOOP.BankModels;
+using System;
 
 namespace LectureOOP
 {
@@ -24,6 +25,28 @@ namespace LectureOOP
     //2. მემკვიდრეობა
     //3. აბსტრაქცია
     //4. პოლიმორფიზმი
+
+
+    public class Person
+    {
+        public string Name { get; set; }
+
+        public void Talk()
+        {
+            Console.WriteLine("ZDAROVA");
+        }
+    }
+
+    public class Teacher : Person
+    {
+        //public string Name { get; set; } // გადაფარვა
+        public new string Name { get; set; } // გადაფარვა
+    }
+
+    public class Student : Person
+    {
+    }
+
 
 
     internal class Program
@@ -96,44 +119,47 @@ namespace LectureOOP
                 {name:"Elene",age:45}
             ] 
 
+
+                        //try
+            //{
+
+            //    Client mariam = new Client()
+            //    {
+            //        FirstName = "Mariam",
+            //        LastName = "Pankelashvii",
+            //        PersonalNumber = "12345678945",
+            //        Account = new Account()
+            //        {
+            //            Iban = "1234567894512345678945",
+            //            Balance = 1100,
+            //            Currency = "USD"
+            //        }
+            //    };
+
+            //    mariam.Withdraw(50000);
+
+
+            //    Client tornike = new();
+            //    tornike.FirstName = "Tornike";
+            //    tornike.LastName = "Brokishvili";
+            //    tornike.PersonalNumber = "12345678942";
+            //    tornike.Account = new Account()
+            //    {
+            //        Iban = "1234567894212345678942",
+            //        Balance = 50,
+            //        Currency = "USD"
+            //    };
+
+            //    //mariam.Transfer(50000, tornike.Account);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
+
              */
 
-            try
-            {
 
-                Client mariam = new Client()
-                {
-                    FirstName = "Mariam",
-                    LastName = "Pankelashvii",
-                    PersonalNumber = "12345678945",
-                    Account = new Account()
-                    {
-                        Iban = "1234567894512345678945",
-                        Balance = 1100,
-                        Currency = "USD"
-                    }
-                };
-
-                mariam.Withdraw(50000);
-
-
-                Client tornike = new();
-                tornike.FirstName = "Tornike";
-                tornike.LastName = "Brokishvili";
-                tornike.PersonalNumber = "12345678942";
-                tornike.Account = new Account()
-                {
-                    Iban = "1234567894212345678942",
-                    Balance = 50,
-                    Currency = "USD"
-                };
-
-                //mariam.Transfer(50000, tornike.Account);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
 
 
 
@@ -141,10 +167,28 @@ namespace LectureOOP
 
 
 
+            //Animal animal1 = new Animal("Jeka");
+            //Dog dog1 = new Dog("Simba");
+
+            Person person = new Person() { Name = "Nika" };
+            person.Talk();
+
+            Person student = new Student() { Name = "Giorgi" };
+            student.Talk();
+
+            Person teacher = new Teacher() { Name = "Daviti" };
 
 
-
+            //SayHi(student);
 
         }
+
+
+        public static void SayHi(Person person)
+        {
+            Console.WriteLine(person.Name);
+        }
+
+
     }
 }
