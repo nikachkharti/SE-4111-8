@@ -1,51 +1,116 @@
 ﻿using LectureOOP.BankModels;
 using System;
+using System.Net.WebSockets;
+using System.Text;
 
 namespace LectureOOP
 {
-
-    //•	საშინაო: დაწერეთ ანგარიშს კლასი, რომელსაც ექნება
-    //•	ანგარიშის ნომერი(22 ნიშნა)
-    //•	ვალუტა(სამნიშნა)
-    //•	ბალანსი(არ უნდა იყოს უარყოფითი)
-
-    //•	დაწერეთ კლიენტის კლასი, რომელსაც ექნება
-    //•	სახელი
-    //•	გვარი
-    //•	პირადი ნომერი(11 ნიშნა)
-    //•	ანგარიში
-
-    //მოახდინეთ თქვენს მიერ შექმნილი კლასების დემონსტრირება კონსოლში.
-
-
-
     //OOP პრინციპები:
 
-    //1. ენკაფსულაცია ნიშნავს გარკვეული ფუნქციონალის დაფარვას უსაფრთხოების მიზნით +
-    //2. მემკვიდრეობა
-    //3. აბსტრაქცია
-    //4. პოლიმორფიზმი
+    //1. მემკვიდრეობა +
+    //2. ენკაფსულაცია ნიშნავს გარკვეული ფუნქციონალის დაფარვას უსაფრთხოების მიზნით +
+    //3. პოლიმორფიზმი +
+    //4. აბსტრაქცია +
 
 
-    public class Person
+
+    //sealed კლასი არის უშვილო კლასი
+    //public /*sealed*/ class Person
+    //{
+    //    public string Name { get; set; }
+
+    //    public void Talk()
+    //    {
+    //        Console.WriteLine("ZDAROVA");
+    //    }
+    //}
+
+    //public class Teacher : Person
+    //{
+    //    //public string Name { get; set; } // გადაფარვა
+    //    public new string Name { get; set; } // გადაფარვა
+    //    public string Subject { get; set; }
+    //}
+
+
+    //class CsharpTeacher : Teacher
+    //{
+    //    //Subject ---> Teacher
+    //    //Name ---> Person
+    //    public void Sing()
+    //    {
+    //    }
+    //}
+
+    //class FrontTeacher : Teacher
+    //{
+    //    //Subject ---> Teacher
+    //    //Name ---> Person
+    //    public void Dance()
+    //    {
+    //    }
+    //}
+
+
+
+    //public class Student : Person
+    //{
+    //}
+
+
+
+
+    public abstract class Person
+    {
+        public string FullName { get; set; }
+
+        //როცა ფუნქცია არის ვირტუალური, მის მემკვიდრეებს აქვთ საშუალება რომ თავის ჭკუაზე გადააკეთონ ეს ფუნქცია
+        public virtual string Talk() => $"Hello I am a person {FullName}";
+        public abstract string Walk();
+    }
+
+    public abstract class Employee : Person
+    {
+        public decimal Salary { get; set; }
+    }
+
+
+
+    class Student : Person
+    {
+        public double Score { get; set; }
+        public Subject Subject { get; set; }
+
+        //override ნიშანავს მშობლის მოწოდებული ფუნქციის გადატვირთვას
+        public override string Talk() => $"Hello I am a student {FullName} I sstudy a subject {Subject.Name} and have score {Score}";
+        public override string Walk() => $"I am walking I am an student {FullName}";
+
+    }
+
+    class Teacher : Employee
+    {
+        public Subject Subject { get; set; }
+
+
+        //override ნიშანავს მშობლის მოწოდებული ფუნქციის გადატვირთვას
+        public override string Talk() => $"Hello I am a employee {FullName} I have a salary {Salary} GEL and teach a subject {Subject.Name}";
+
+        public override string Walk() => $"I am walking I am an a teacher {FullName}";
+
+    }
+
+
+
+    public class Subject
     {
         public string Name { get; set; }
 
-        public void Talk()
+        public override string ToString()
         {
-            Console.WriteLine("ZDAROVA");
+            return Name;
         }
     }
 
-    public class Teacher : Person
-    {
-        //public string Name { get; set; } // გადაფარვა
-        public new string Name { get; set; } // გადაფარვა
-    }
-
-    public class Student : Person
-    {
-    }
 
 
 
@@ -160,34 +225,81 @@ namespace LectureOOP
              */
 
 
+            //Animal animal1 = new Animal("Jeka");
+            //Dog dog1 = new Dog("Simba");
 
+            //Person person = new Person() { Name = "Nika" };
+            //person.Talk();
+
+            //Person student = new Student() { Name = "Giorgi" };
+            //student.Talk();
+
+            ////Person teacher = new Teacher() { Name = "Daviti" };
+
+            //CsharpTeacher csTeacherObject = new();
+            //csTeacherObject.Name = "";
+
+
+            //SayHi(student);
+
+
+
+            //!!!! არ გამოიყენოთ !!!!
+            //object[] x = { 1, 2, 3, "asdasd", true, student };
+
+            ////BOXING UNBOXING
+            //object first = 1;
+            //int xx = (int)first;
 
 
             #endregion
 
 
 
-            //Animal animal1 = new Animal("Jeka");
-            //Dog dog1 = new Dog("Simba");
-
-            Person person = new Person() { Name = "Nika" };
-            person.Talk();
-
-            Person student = new Student() { Name = "Giorgi" };
-            student.Talk();
-
-            Person teacher = new Teacher() { Name = "Daviti" };
+            Subject typeScript = new() { Name = "Typescript" };
+            Subject angular = new() { Name = "Angular" };
+            Subject react = new() { Name = "React" };
 
 
-            //SayHi(student);
+            Console.WriteLine(typeScript);
+            Console.WriteLine(angular);
+            Console.WriteLine(react);
+
+
+
+
+
+
+
+
+
+
+            var teacherObj = new Teacher
+            {
+                FullName = "John Doe",
+                Salary = 75000.00m,
+                Subject = new Subject { Name = "Mathematics" }
+            };
+
+
+            var studentObj = new Student
+            {
+                FullName = "Jack Doe",
+                Score = 100,
+                Subject = new Subject { Name = "Mathematics" }
+            };
+
+
+            //პოლიმორფიზმი
+            Console.WriteLine(teacherObj.Talk());
+            Console.WriteLine(studentObj.Talk());
+
+
 
         }
 
 
-        public static void SayHi(Person person)
-        {
-            Console.WriteLine(person.Name);
-        }
+        public static void SayHi(Person person) => Console.WriteLine($"Hello {person.FullName}");
 
 
     }
