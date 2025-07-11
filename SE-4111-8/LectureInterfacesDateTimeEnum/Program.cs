@@ -84,6 +84,23 @@ namespace LectureInterfacesDateTimeEnum
             }
         }
 
+
+        class Client
+        {
+            public string Name { get; set; }
+            public ClientType ClientType { get; set; }
+
+            public override string ToString() => $"{Name} - {ClientType}";
+        }
+
+        public enum ClientType : byte
+        {
+            Phyisical = 1,
+            Legal = 2,
+            ClientForTest = 3
+        }
+
+
         static void Main(string[] args)
         {
             //var currentDateTime = DateTime.Now;
@@ -123,9 +140,13 @@ namespace LectureInterfacesDateTimeEnum
             //Console.WriteLine(now.ToString("dddd,MMMM,dddd"));
 
 
-            //დაწერეთ ფუნქცია რომელსაც გადავცემთ, დაბადების თარიღს და ფუნქცია დაგვიბრუნებს თუ რამდენი წლისაა ადამიანი
+            Client client = new Client() { Name = "Giorgi", ClientType = ClientType.ClientForTest };
+            File.WriteAllText(@"../../../test.txt", client.ToString());
 
+
+            Console.WriteLine(client);
 
         }
+
     }
 }
