@@ -70,8 +70,6 @@
         public override string ToString() => $"{Amount} {Currency}";
 
 
-
-
         public int CompareTo(Money other)
         {
             ValidateSameCurrency(other);
