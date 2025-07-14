@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LectureOOP", "LectureOOP\Le
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LectureInterfacesDateTimeEnum", "LectureInterfacesDateTimeEnum\LectureInterfacesDateTimeEnum.csproj", "{2095EECB-2DE0-4232-A601-9C76C2037018}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LectureOperatorOverload", "LectureOperatorOverload\LectureOperatorOverload.csproj", "{8323D151-445F-4FD5-904E-91797562EC7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2095EECB-2DE0-4232-A601-9C76C2037018}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2095EECB-2DE0-4232-A601-9C76C2037018}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2095EECB-2DE0-4232-A601-9C76C2037018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8323D151-445F-4FD5-904E-91797562EC7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8323D151-445F-4FD5-904E-91797562EC7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8323D151-445F-4FD5-904E-91797562EC7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8323D151-445F-4FD5-904E-91797562EC7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
