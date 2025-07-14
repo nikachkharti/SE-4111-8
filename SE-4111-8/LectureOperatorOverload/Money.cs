@@ -11,17 +11,66 @@
             Currency = currency;
         }
 
-
         public static Money operator +(Money first, Money second)
         {
             ValidateSameCurrency(first, second);
-
             var amountSum = first.Amount + second.Amount;
             return new Money(amountSum, first.Currency);
+        }
+        public static Money operator -(Money first, Money second)
+        {
+            ValidateSameCurrency(first, second);
+            var amountSum = first.Amount - second.Amount;
+            return new Money(amountSum, first.Currency);
+        }
+        public static Money operator *(Money first, Money second)
+        {
+            ValidateSameCurrency(first, second);
+            var amountSum = first.Amount * second.Amount;
+            return new Money(amountSum, first.Currency);
+        }
+        public static Money operator /(Money first, Money second)
+        {
+            ValidateSameCurrency(first, second);
+            var amountSum = first.Amount / second.Amount;
+            return new Money(amountSum, first.Currency);
+        }
+        public static bool operator ==(Money first, Money second)
+        {
+            ValidateSameCurrency(first, second);
+            return first.Amount == second.Amount;
+        }
+        public static bool operator !=(Money first, Money second)
+        {
+            ValidateSameCurrency(first, second);
+            return first.Amount != second.Amount;
+        }
+        public static bool operator >(Money first, Money second)
+        {
+            ValidateSameCurrency(first, second);
+            return first.Amount > second.Amount;
+        }
+        public static bool operator <(Money first, Money second)
+        {
+            ValidateSameCurrency(first, second);
+            return first.Amount < second.Amount;
+        }
+        public static bool operator >=(Money first, Money second)
+        {
+            ValidateSameCurrency(first, second);
+            return first.Amount >= second.Amount;
+        }
+        public static bool operator <=(Money first, Money second)
+        {
+            ValidateSameCurrency(first, second);
+            return first.Amount <= second.Amount;
         }
 
 
         public override string ToString() => $"{Amount} {Currency}";
+
+
+
 
         public int CompareTo(Money other)
         {
