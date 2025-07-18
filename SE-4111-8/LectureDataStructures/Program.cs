@@ -28,6 +28,75 @@
             // 
             #endregion
 
+
+            #region STACK
+
+            //LIFO - (Last In First Out) ბოლოს ჩამატებული ელემენტი პირველ ადგულს იკავებს კოლექციაში
+
+            Stack<int> stack = new();
+            stack.Push(12); // ელემენტის ჩამატება
+            stack.Push(47); // ელემენტის ჩამატება
+                            //stack.Pop(); // ზედა ელემენტის ამოგდება
+                            //var a = stack.Peek(); // აბრუნებს ზედა ელემენტს წაშლის გარეშე
+                            //stack.Contains(12);
+                            //stack.Clear();
+                            //stack.Count;
+
+
+            #endregion
+
+
+            #region QUEUE
+            //FIFO (First In First Out) პირველი შემავალი ელემენტი რიგს ტოვებს პირველი
+
+            Queue<int> intQueue = new();
+            intQueue.Enqueue(12); // ელემენტის დამატება
+            intQueue.Enqueue(47); // ელემენტის დამატება
+                                  //intQueue.Dequeue(); // ელემენტის ამოგდება
+                                  //intQueue.Clear();
+                                  //intQueue.Contains(12);
+                                  //intQueue.Count;
+
+            #endregion
+
+
+            #region HASHSET
+
+            HashSet<int> intSet = new();
+            intSet.Add(12);
+            intSet.Add(121);
+            intSet.Add(121);
+            intSet.Add(12);
+
+            HashSet<int> intSet2 = new();
+            intSet2.Add(12);
+            intSet2.Add(121);
+
+            var x = intSet2.IsSubsetOf(intSet); // არის თუ არა IntSet2 intSet ის ქვესიმრავლე
+            var xx = intSet2.IsSupersetOf(intSet); // არის თუ არა IntSet2 intSet ის ზესიმრავლე
+
+            #endregion
+
+
+            #region DICTIONARY
+
+            //Dictionary<int, string> students = new();
+            //students.Add(1, "Nika");
+            //students.Add(2, "Ana");
+
+            //if (students.TryGetValue(1, out string name))
+            //{
+            //    Console.WriteLine($"ID 1 : {name}");
+            //}
+
+            //students[1] = "Luka";
+
+            //foreach (var student in students)
+            //{
+            //    Console.WriteLine($"K: {student.Key}  V:{student.Value}");
+            //}
+
+            #endregion
         }
     }
 }
