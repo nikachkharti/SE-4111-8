@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LectureOperatorOverload", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LectureVehiclesPractice", "LectureVehiclesPractice\LectureVehiclesPractice.csproj", "{260CD376-0F78-4C55-AD20-AEF880746EE4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LectureDataStructures", "LectureDataStructures\LectureDataStructures.csproj", "{BD1F2491-096A-4D5C-94F8-36A70E95C814}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{260CD376-0F78-4C55-AD20-AEF880746EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{260CD376-0F78-4C55-AD20-AEF880746EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{260CD376-0F78-4C55-AD20-AEF880746EE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD1F2491-096A-4D5C-94F8-36A70E95C814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD1F2491-096A-4D5C-94F8-36A70E95C814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD1F2491-096A-4D5C-94F8-36A70E95C814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD1F2491-096A-4D5C-94F8-36A70E95C814}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
