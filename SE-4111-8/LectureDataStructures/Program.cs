@@ -1,6 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace LectureDataStructures
+﻿namespace LectureDataStructures
 {
     internal class Program
     {
@@ -9,8 +7,11 @@ namespace LectureDataStructures
             int[] intAr = { 1, 11, -2, 21, 30, -7, 21, 30 };
             List<int> intList = new() { 1, -11, 2, 21, 30, 7 };
 
-            var result = Algorithms.CustomFirstOrDefault(intList, number => number % 2 == 0);
+            List<string> stringList = new() { "10", "20", "30" };
+            //var selectedStringList = Algorithms.CustomSelect(stringList, Convert.ToInt32);
 
+            //Algorithms.Log("Hello I am nika", Console.WriteLine);
+            Algorithms.Log("Hello I am nika", info => File.WriteAllText(@"../../../test.txt", info));
 
 
 
@@ -109,6 +110,11 @@ namespace LectureDataStructures
             #endregion
         }
 
+
+        private static void WriteInFile(string info)
+        {
+            File.WriteAllText(@"../../../test.txt", info);
+        }
 
     }
 }
