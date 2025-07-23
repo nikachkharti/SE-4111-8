@@ -9,14 +9,10 @@ namespace LectureDataStructures
             //var filePath = "C:\\Users\\User\\Desktop\\IT STEP\\SE-4111-8\\SE-4111-8\\LectureVehiclesPractice\\vehicles.csv";
             //var carsAsString = File.ReadAllLines(filePath);
 
-            List<long> intList = new() { 1, -11, 2, 21, -30, 30, 7, 7 };
+            List<int> intList = new() { 1, -11, 2, 21, -30, 30, 7, 7 };
             List<string> stringList = new() { "1", "2", "3" };
 
-
-            var result = Algorithms.Custom_Select(stringList, long.Parse);
-
-
-
+            var result = Algorithms.Custom_Sum(intList, x => x > 0);
 
 
             #region LIST

@@ -1,4 +1,5 @@
 ﻿using LectureVehiclesPractice;
+using System.Runtime.Intrinsics.Arm;
 
 namespace LectureDataStructures
 {
@@ -71,9 +72,112 @@ namespace LectureDataStructures
 
             return result;
         }
+        public static List<int> Custom_Where(List<int> intList, Func<int, bool> predicate)
+        {
+            List<int> result = new();
 
-        //1. დაწერეთ მეთოდი Custom_Where --> მეთოდმა უნდა მიიღოს int ლისტი და დააბრუნოს ყველა შესაძლო შედეგი, გადაცემული პირობის მიხედვით.
-        //2. დაწერეთ მეთოდი Custom_FirstIndex --> მეთოდმა უნდა მიიღოს int ლისტი და დააბრუნოს პირობის მიხედვით გადაცემული შესაბამისი პირველივე ელემენტის ინდექსი.
-        //3. დაწერეთ მეთოდი Custom_LastIndex --> მეთოდმა უნდა მიიღოს int ლისტი და დააბრუნოს პირობის მიხედვით გადაცემული შესაბამისი ბოლო ელემენტის ინდექსი.
+            for (int i = 0; i < intList.Count; i++)
+            {
+                if (predicate(intList[i]))
+                {
+                    result.Add(intList[i]);
+                }
+            }
+
+            return result;
+        }
+        public static int Custom_FirstIndex(List<int> intList, Func<int, bool> predicate)
+        {
+            for (int i = 0; i < intList.Count; i++)
+            {
+                if (predicate(intList[i]))
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+        public static int Custom_LastIndex(List<int> intList, Predicate<int> predicate)
+        {
+            for (int i = intList.Count - 1; i >= 0; i--)
+            {
+                if (predicate(intList[i]))
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+        public static List<int> Custom_OrderBy(List<int> intList, Func<int, int, bool> compareFunction)
+        {
+            for (int i = 0; i < intList.Count - 1; i++)
+            {
+                for (int j = i + 1; j < intList.Count; j++)
+                {
+                    if (compareFunction(intList[j], intList[i]))
+                    {
+                        int temp = intList[j];
+                        intList[j] = intList[i];
+                        intList[i] = temp;
+                    }
+                }
+            }
+
+            return intList;
+        }
+        public static int Custom_Sum(List<int> intList)
+        {
+            int sum = 0;
+
+            for (int i = 0; i < intList.Count; i++)
+            {
+                sum += intList[i];
+            }
+
+            return sum;
+        }
+        public static int Custom_Sum(List<int> intList, Predicate<int> predicate)
+        {
+            int sum = 0;
+
+            for (int i = 0; i < intList.Count; i++)
+            {
+                if (predicate(intList[i]))
+                {
+                    sum += intList[i];
+                }
+            }
+
+            return sum;
+        }
+        public static int Custom_Count(List<int> intList)
+        {
+            int count = 0;
+
+            for (int i = 0; i < intList.Count; i++)
+            {
+                count++;
+            }
+
+            return count;
+        }
+        public static int Custom_Count(List<int> intList, Predicate<int> predicate)
+        {
+            int count = 0;
+
+            for (int i = 0; i < intList.Count; i++)
+            {
+                if (predicate(intList[i]))
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+
     }
 }
