@@ -1,17 +1,21 @@
-﻿namespace LectureDataStructures
+﻿using LectureVehiclesPractice;
+
+namespace LectureDataStructures
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int[] intAr = { 1, 11, -2, 21, 30, -7, 21, 30 };
-            List<int> intList = new() { 1, -11, 2, 21, 30, 7 };
+            //var filePath = "C:\\Users\\User\\Desktop\\IT STEP\\SE-4111-8\\SE-4111-8\\LectureVehiclesPractice\\vehicles.csv";
+            //var carsAsString = File.ReadAllLines(filePath);
 
-            List<string> stringList = new() { "10", "20", "30" };
-            var selectedStringList = Algorithms.CustomSelect(stringList, Convert.ToInt32);
+            List<long> intList = new() { 1, -11, 2, 21, -30, 30, 7, 7 };
+            List<string> stringList = new() { "1", "2", "3" };
 
-            Algorithms.Log("Hello I am nika", Console.WriteLine);
-            Algorithms.Log("Hello I am nika", info => File.WriteAllText(@"../../../test.txt", info));
+
+            var result = Algorithms.Custom_Select(stringList, long.Parse);
+
+
 
 
 
