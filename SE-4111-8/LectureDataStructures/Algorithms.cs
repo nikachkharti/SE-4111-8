@@ -1,12 +1,17 @@
 ﻿namespace LectureDataStructures
 {
-    public delegate bool Predicate(int value);
-    public delegate int Func(string value);
-    public delegate void Action(string value);
+    //Predicate --> შეუძლია მიინიჭოს ისეთი მეთოდი რომელიც პარამეტრად იღებს რაიმე ტიპს და აბრუნებს bool - ს
+    //Func --> შეუძლია მიინიჭოს ისეთი მეთოდი რომელიც პარამეტრად იღებს რაიმე ტიპს და დასაბრუნებელი ტიპს ვუთითებთ ჩვენ
+    //Action --> შეუძლია მიინიჭოს ისეთი მეთოდი რომლის დასაბრუნებელი ტიპი არის void
+
+
+    //public delegate bool Predicate(int value);
+    //public delegate int Func(string value);
+    //public delegate void Action(string value);
 
     public class Algorithms
     {
-        public static int CustomFirstOrDefault(List<int> intList, Predicate predicate) //<< piroba
+        public static int CustomFirstOrDefault(List<int> intList, Predicate<int> predicate) //<< piroba
         {
             for (int i = 0; i < intList.Count; i++)
             {
@@ -18,7 +23,7 @@
 
             return default;
         }
-        public static int CustomLastOrDefault(int[] numbersArray, Predicate predicate)
+        public static int CustomLastOrDefault(int[] numbersArray, Predicate<int> predicate)
         {
             for (int i = numbersArray.Length - 1; i >= 0; i--)
             {
@@ -30,7 +35,7 @@
 
             return default;
         }
-        public static List<int> CustomFindAll(List<int> intList, Predicate predicate)
+        public static List<int> CustomFindAll(List<int> intList, Func<int, bool> predicate)
         {
             List<int> result = new();
 
@@ -44,7 +49,7 @@
 
             return result;
         }
-        public static List<int> CustomSelect(List<string> stringList, Func selector)
+        public static List<int> CustomSelect(List<string> stringList, Func<string, int> selector)
         {
             List<int> result = new();
 
@@ -55,7 +60,7 @@
 
             return result;
         }
-        public static void Log(string info, Action action)
+        public static void Log(string info, Action<string> action)
         {
             action(info);
         }

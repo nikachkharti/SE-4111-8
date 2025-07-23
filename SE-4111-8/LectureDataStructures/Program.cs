@@ -8,9 +8,9 @@
             List<int> intList = new() { 1, -11, 2, 21, 30, 7 };
 
             List<string> stringList = new() { "10", "20", "30" };
-            //var selectedStringList = Algorithms.CustomSelect(stringList, Convert.ToInt32);
+            var selectedStringList = Algorithms.CustomSelect(stringList, Convert.ToInt32);
 
-            //Algorithms.Log("Hello I am nika", Console.WriteLine);
+            Algorithms.Log("Hello I am nika", Console.WriteLine);
             Algorithms.Log("Hello I am nika", info => File.WriteAllText(@"../../../test.txt", info));
 
 
