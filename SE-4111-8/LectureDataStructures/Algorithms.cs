@@ -33,19 +33,19 @@ namespace LectureDataStructures
             return default;
         }
 
-        //გააკეთეთ უჩემოდ !!!
         public static int Custom_LastOrDefault(IEnumerable<int> source, Predicate<int> predicate)
         {
-            for (int i = source.Count() - 1; i >= 0; i--)
+            int result = default;
+
+            foreach (var item in source)
             {
-                if (predicate(source[i]))
+                if (predicate(item))
                 {
-                    return source[i];
+                    result = item;
                 }
             }
 
-            return default;
-
+            return result;
         }
         public static Vehicle[] Custom_Select(string[] vehiclesString, Func<string, Vehicle> converter)
         {
@@ -69,32 +69,22 @@ namespace LectureDataStructures
 
             return result;
         }
-
-        public static List<long> Custom_Select(List<string> stringList, Func<string, long> converter)
-        {
-            List<long> result = new();
-
-            for (int i = 0; i < stringList.Count; i++)
-            {
-                result.Add(converter(stringList[i]));
-            }
-
-            return result;
-        }
-        public static List<int> Custom_Where(List<int> intList, Func<int, bool> predicate)
+        public static List<int> Custom_Where(IEnumerable<int> source, Func<int, bool> predicate)
         {
             List<int> result = new();
 
-            for (int i = 0; i < intList.Count; i++)
+            foreach (int item in source)
             {
-                if (predicate(intList[i]))
+                if (predicate(item))
                 {
-                    result.Add(intList[i]);
+                    result.Add(item);
                 }
             }
 
             return result;
         }
+
+        // გააკეთეთ !!!!s
         public static int Custom_FirstIndex(List<int> intList, Func<int, bool> predicate)
         {
             for (int i = 0; i < intList.Count; i++)
@@ -107,6 +97,8 @@ namespace LectureDataStructures
 
             return -1;
         }
+
+
         public static int Custom_LastIndex(List<int> intList, Predicate<int> predicate)
         {
             for (int i = intList.Count - 1; i >= 0; i--)
