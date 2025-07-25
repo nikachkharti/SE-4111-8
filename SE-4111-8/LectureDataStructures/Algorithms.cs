@@ -1,5 +1,8 @@
 ﻿using LectureVehiclesPractice;
+using System;
+using System.Collections.Generic;
 using System.Runtime.Intrinsics.Arm;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace LectureDataStructures
 {
@@ -12,27 +15,32 @@ namespace LectureDataStructures
     //public delegate int Func(string value);
     //public delegate void Action(string value);
 
+
+    //IEnumerable გვაძლევს  Current, MoveNext, Reset , GetEnumerator
+
     public static class Algorithms
     {
-        public static int Custom_FirstOrDefault(List<int> intList, Func<int, bool> predicate)
+        public static int Custom_FirstOrDefault(IEnumerable<int> source, Func<int, bool> predicate)
         {
-            for (int i = 0; i < intList.Count; i++)
+            foreach (int item in source)
             {
-                if (predicate(intList[i]))
+                if (predicate(item))
                 {
-                    return intList[i];
+                    return item;
                 }
             }
 
             return default;
         }
-        public static int Custom_LastOrDefault(List<int> intList, Predicate<int> predicate)
+
+        //გააკეთეთ უჩემოდ !!!
+        public static int Custom_LastOrDefault(IEnumerable<int> source, Predicate<int> predicate)
         {
-            for (int i = intList.Count - 1; i >= 0; i--)
+            for (int i = source.Count() - 1; i >= 0; i--)
             {
-                if (predicate(intList[i]))
+                if (predicate(source[i]))
                 {
-                    return intList[i];
+                    return source[i];
                 }
             }
 
@@ -50,17 +58,18 @@ namespace LectureDataStructures
 
             return cars;
         }
-        public static List<int> Custom_Select(List<string> stringList, Func<string, int> converter)
+        public static List<int> Custom_Select(IEnumerable<string> source, Func<string, int> converter)
         {
             List<int> result = new();
 
-            for (int i = 0; i < stringList.Count; i++)
+            foreach (string item in source)
             {
-                result.Add(converter(stringList[i]));
+                result.Add(converter(item));
             }
 
             return result;
         }
+
         public static List<long> Custom_Select(List<string> stringList, Func<string, long> converter)
         {
             List<long> result = new();
@@ -177,7 +186,117 @@ namespace LectureDataStructures
 
             return count;
         }
+        public static List<int> Custom_Distinct(List<int> intList)
+        {
+            List<int> result = new();
 
+            for (int i = 0; i < intList.Count; i++)
+            {
+                if (!result.Contains(intList[i]))
+                    result.Add(intList[i]);
+            }
+
+            return result;
+        }
+        public static List<int> Custom_Reverse(List<int> intList)
+        {
+            List<int> result = new();
+
+            for (int i = intList.Count - 1; i >= 0; i--)
+            {
+                result.Add(intList[i]);
+            }
+
+            return result;
+        }
+        public static List<int> Custom_Reverse(List<int> intList, Func<int, bool> predicate)
+        {
+            List<int> result = new();
+
+            for (int i = intList.Count - 1; i >= 0; i--)
+            {
+                if (predicate(intList[i]))
+                {
+                    result.Add(intList[i]);
+                }
+            }
+
+            return result;
+        }
+        public static bool Custom_Any(List<int> intList, Func<int, bool> predicate)
+        {
+            for (int i = intList.Count - 1; i >= 0; i--)
+            {
+                if (predicate(intList[i]))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        public static bool Custom_All(List<int> intList, Func<int, bool> predicate)
+        {
+            for (int i = intList.Count - 1; i >= 0; i--)
+            {
+                if (!predicate(intList[i]))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        public static int Custom_Max(List<int> intList)
+        {
+            int max = intList[0];
+
+            for (int i = 0; i < intList.Count; i++)
+            {
+                if (intList[i] > max)
+                {
+                    max = intList[i];
+                }
+            }
+
+            return max;
+        }
+        public static int Custom_Min(List<int> intList)
+        {
+            int max = intList[0];
+
+            for (int i = 0; i < intList.Count; i++)
+            {
+                if (intList[i] < max)
+                {
+                    max = intList[i];
+                }
+            }
+
+            return max;
+        }
+        public static List<int> Custom_Take(List<int> intList, int count)
+        {
+            List<int> result = new();
+
+            for (int i = 0; i < count && i < intList.Count; i++)
+            {
+                result.Add(intList[i]);
+            }
+
+            return result;
+        }
+        public static List<int> Custom_Skip(List<int> intList, int count)
+        {
+            List<int> result = new();
+
+            for (int i = count; i < intList.Count; i++)
+            {
+                result.Add(intList[i]);
+            }
+
+            return result;
+        }
 
     }
 }
