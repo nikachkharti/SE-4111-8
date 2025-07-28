@@ -1,5 +1,6 @@
 ﻿using LectureVehiclesPractice;
 using System.Collections;
+using System.Numerics;
 
 namespace LectureDataStructures
 {
@@ -7,13 +8,32 @@ namespace LectureDataStructures
     {
         static void Main(string[] args)
         {
-            //var filePath = "C:\\Users\\User\\Desktop\\IT STEP\\SE-4111-8\\SE-4111-8\\LectureVehiclesPractice\\vehicles.csv";
-            //var carsAsString = File.ReadAllLines(filePath);
+            var filePath = "C:\\Users\\User\\Desktop\\IT STEP\\SE-4111-8\\SE-4111-8\\LectureVehiclesPractice\\vehicles.csv";
+            var carsAsString = File.ReadAllLines(filePath);
 
-            List<int> intList = new() { 1, 1, 1, 11, 2, -21, 30, 30, 7, -7 };
-            List<string> stringList = new() { "1", "2", "3" };
-            HashSet<string> stringSet = new() { "1", "2", "3" };
-            string[] stringArray = { "1", "2", "3" };
+            //1.მოძებნეთ მერსედესი
+            //2.მოძებნეთ პირველივე ისეთი რომლის ქალაქში გამავლობა მეტია 15 ზე და ნაკლებია 23 ze
+
+            //var allCars = Algorithms.Custom_Select(carsAsString, Vehicle.Parse);
+            //var allMercedeses = Algorithms.Custom_Where(allCars, x => x.Make.Contains("Mercedes", StringComparison.OrdinalIgnoreCase));
+            //var finalMercedes = Algorithms.Custom_FirstOrDefault(allMercedeses, m => m.City >= 15 && m.City <= 23);
+
+
+            var finalMercedes = carsAsString
+                .Custom_Select(Vehicle.Parse)
+                .Custom_Where(x => x.Make.Contains("Mercedes", StringComparison.OrdinalIgnoreCase))
+                .Custom_FirstOrDefault(m => m.City >= 15 && m.City <= 23);
+
+
+            //List<int> intList = new() { 1, 1, 1, 11, 2, -21, 30, 30, 7, -7 };
+            //List<string> stringList = new() { "Nika", "Giorgi", "Daviti" };
+            //List<double> doubleList = new() { 10.1, 2.2, 3.1 };
+            //List<string> listString = new() { "10.1", "2.2", "3.1" };
+
+
+
+
+
 
 
 

@@ -20,9 +20,9 @@ namespace LectureDataStructures
 
     public static class Algorithms
     {
-        public static int Custom_FirstOrDefault(IEnumerable<int> source, Func<int, bool> predicate)
+        public static T Custom_FirstOrDefault<T>(this IEnumerable<T> source, Func<T, bool> predicate)
         {
-            foreach (int item in source)
+            foreach (var item in source)
             {
                 if (predicate(item))
                 {
@@ -32,10 +32,9 @@ namespace LectureDataStructures
 
             return default;
         }
-
-        public static int Custom_LastOrDefault(IEnumerable<int> source, Predicate<int> predicate)
+        public static T Custom_LastOrDefault<T>(IEnumerable<T> source, Predicate<T> predicate)
         {
-            int result = default;
+            T result = default;
 
             foreach (var item in source)
             {
@@ -47,33 +46,31 @@ namespace LectureDataStructures
 
             return result;
         }
-        public static Vehicle[] Custom_Select(string[] vehiclesString, Func<string, Vehicle> converter)
+        public static IEnumerable<TDestination> Custom_Select<TSource, TDestination>(this IEnumerable<TSource> source, Func<TSource, TDestination> selector)
         {
-            Vehicle[] cars = new Vehicle[vehiclesString.Length];
+            List<TDestination> result = new();
 
-            for (int i = 0; i < vehiclesString.Length; i++)
+            foreach (var item in source)
             {
-                cars[i] = converter(vehiclesString[i]);
-            }
-
-            return cars;
-        }
-        public static List<int> Custom_Select(IEnumerable<string> source, Func<string, int> converter)
-        {
-            List<int> result = new();
-
-            foreach (string item in source)
-            {
-                result.Add(converter(item));
+                result.Add(selector(item));
             }
 
             return result;
         }
-        public static List<int> Custom_Where(IEnumerable<int> source, Func<int, bool> predicate)
+        public static void Custom_Foreach<T>(this IEnumerable<T> source)
         {
-            List<int> result = new();
+            var enumerator = source.GetEnumerator();
 
-            foreach (int item in source)
+            while (enumerator.MoveNext())
+            {
+                Console.WriteLine(enumerator.Current);
+            }
+        }
+        public static IEnumerable<T> Custom_Where<T>(this IEnumerable<T> source, Func<T, bool> predicate)
+        {
+            List<T> result = new();
+
+            foreach (var item in source)
             {
                 if (predicate(item))
                 {
@@ -83,6 +80,8 @@ namespace LectureDataStructures
 
             return result;
         }
+
+
         public static int Custom_FirstIndex(IEnumerable<int> source, Func<int, bool> predicate)
         {
             int i = 0;
