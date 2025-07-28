@@ -83,35 +83,40 @@ namespace LectureDataStructures
 
             return result;
         }
-
-        // გააკეთეთ !!!!s
-        public static int Custom_FirstIndex(List<int> intList, Func<int, bool> predicate)
+        public static int Custom_FirstIndex(IEnumerable<int> source, Func<int, bool> predicate)
         {
-            for (int i = 0; i < intList.Count; i++)
+            int i = 0;
+
+            foreach (var item in source)
             {
-                if (predicate(intList[i]))
+                if (predicate(item))
                 {
                     return i;
                 }
+
+                i++;
             }
 
             return -1;
         }
-
-
-        public static int Custom_LastIndex(List<int> intList, Predicate<int> predicate)
+        public static int Custom_LastIndex(IEnumerable<int> source, Predicate<int> predicate)
         {
-            for (int i = intList.Count - 1; i >= 0; i--)
+            int i = 0;
+            int result = -1;
+
+            foreach (var item in source)
             {
-                if (predicate(intList[i]))
+                if (predicate(item))
                 {
-                    return i;
+                    result = i;
                 }
+
+                i++;
             }
 
-            return -1;
+            return result;
         }
-        public static List<int> Custom_OrderBy(List<int> intList, Func<int, int, bool> compareFunction)
+        public static IList<int> Custom_OrderBy(IList<int> intList, Func<int, int, bool> compareFunction)
         {
             for (int i = 0; i < intList.Count - 1; i++)
             {
@@ -128,49 +133,49 @@ namespace LectureDataStructures
 
             return intList;
         }
-        public static int Custom_Sum(List<int> intList)
+        public static int Custom_Sum(IEnumerable<int> source)
         {
             int sum = 0;
 
-            for (int i = 0; i < intList.Count; i++)
+            foreach (int item in source)
             {
-                sum += intList[i];
+                sum += item;
             }
 
             return sum;
         }
-        public static int Custom_Sum(List<int> intList, Predicate<int> predicate)
+        public static int Custom_Sum(IEnumerable<int> source, Predicate<int> predicate)
         {
             int sum = 0;
 
-            for (int i = 0; i < intList.Count; i++)
+            foreach (int item in source)
             {
-                if (predicate(intList[i]))
+                if (predicate(item))
                 {
-                    sum += intList[i];
+                    sum += item;
                 }
             }
 
             return sum;
         }
-        public static int Custom_Count(List<int> intList)
+        public static int Custom_Count(IEnumerable<int> source)
         {
             int count = 0;
 
-            for (int i = 0; i < intList.Count; i++)
+            foreach (int item in source)
             {
                 count++;
             }
 
             return count;
         }
-        public static int Custom_Count(List<int> intList, Predicate<int> predicate)
+        public static int Custom_Count(IEnumerable<int> source, Predicate<int> predicate)
         {
             int count = 0;
 
-            for (int i = 0; i < intList.Count; i++)
+            foreach (int item in source)
             {
-                if (predicate(intList[i]))
+                if (predicate(item))
                 {
                     count++;
                 }
@@ -178,48 +183,45 @@ namespace LectureDataStructures
 
             return count;
         }
-        public static List<int> Custom_Distinct(List<int> intList)
+        public static IEnumerable<int> Custom_Distinct(IEnumerable<int> source)
         {
-            List<int> result = new();
+            HashSet<int> set = new();
 
-            for (int i = 0; i < intList.Count; i++)
+            foreach (int item in source)
             {
-                if (!result.Contains(intList[i]))
-                    result.Add(intList[i]);
+                set.Add(item);
             }
 
-            return result;
+            return set;
         }
-        public static List<int> Custom_Reverse(List<int> intList)
+        public static IEnumerable<int> Custom_Reverse(IEnumerable<int> source)
         {
-            List<int> result = new();
+            Stack<int> stack = new();
 
-            for (int i = intList.Count - 1; i >= 0; i--)
+            foreach (var item in source)
             {
-                result.Add(intList[i]);
+                stack.Push(item);
             }
 
-            return result;
+            return stack;
         }
-        public static List<int> Custom_Reverse(List<int> intList, Func<int, bool> predicate)
+        public static IEnumerable<int> Custom_Reverse(IEnumerable<int> source, Func<int, bool> predicate)
         {
-            List<int> result = new();
+            Stack<int> stack = new();
 
-            for (int i = intList.Count - 1; i >= 0; i--)
+            foreach (var item in source)
             {
-                if (predicate(intList[i]))
-                {
-                    result.Add(intList[i]);
-                }
+                if (predicate(item))
+                    stack.Push(item);
             }
 
-            return result;
+            return stack;
         }
-        public static bool Custom_Any(List<int> intList, Func<int, bool> predicate)
+        public static bool Custom_Any(IEnumerable<int> source, Func<int, bool> predicate)
         {
-            for (int i = intList.Count - 1; i >= 0; i--)
+            foreach (var item in source)
             {
-                if (predicate(intList[i]))
+                if (predicate(item))
                 {
                     return true;
                 }
@@ -227,11 +229,11 @@ namespace LectureDataStructures
 
             return false;
         }
-        public static bool Custom_All(List<int> intList, Func<int, bool> predicate)
+        public static bool Custom_All(IEnumerable<int> source, Func<int, bool> predicate)
         {
-            for (int i = intList.Count - 1; i >= 0; i--)
+            foreach (var item in source)
             {
-                if (!predicate(intList[i]))
+                if (!predicate(item))
                 {
                     return false;
                 }
@@ -239,6 +241,11 @@ namespace LectureDataStructures
 
             return true;
         }
+
+
+
+
+        //გადასაკეთებელი !!!!
         public static int Custom_Max(List<int> intList)
         {
             int max = intList[0];
