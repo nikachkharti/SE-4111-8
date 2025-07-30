@@ -32,7 +32,7 @@ namespace LectureDataStructures
 
             return default;
         }
-        public static T Custom_LastOrDefault<T>(IEnumerable<T> source, Predicate<T> predicate)
+        public static T Custom_LastOrDefault<T>(this IEnumerable<T> source, Predicate<T> predicate)
         {
             T result = default;
 
@@ -80,9 +80,7 @@ namespace LectureDataStructures
 
             return result;
         }
-
-
-        public static int Custom_FirstIndex(IEnumerable<int> source, Func<int, bool> predicate)
+        public static int Custom_FirstIndex<T>(this IEnumerable<T> source, Func<T, bool> predicate)
         {
             int i = 0;
 
@@ -98,7 +96,7 @@ namespace LectureDataStructures
 
             return -1;
         }
-        public static int Custom_LastIndex(IEnumerable<int> source, Predicate<int> predicate)
+        public static int Custom_LastIndex<T>(this IEnumerable<T> source, Predicate<T> predicate)
         {
             int i = 0;
             int result = -1;
@@ -115,7 +113,7 @@ namespace LectureDataStructures
 
             return result;
         }
-        public static IList<int> Custom_OrderBy(IList<int> intList, Func<int, int, bool> compareFunction)
+        public static IList<T> Custom_OrderBy<T>(this IList<T> intList, Func<T, T, bool> compareFunction)
         {
             for (int i = 0; i < intList.Count - 1; i++)
             {
@@ -123,7 +121,7 @@ namespace LectureDataStructures
                 {
                     if (compareFunction(intList[j], intList[i]))
                     {
-                        int temp = intList[j];
+                        T temp = intList[j];
                         intList[j] = intList[i];
                         intList[i] = temp;
                     }
@@ -132,7 +130,7 @@ namespace LectureDataStructures
 
             return intList;
         }
-        public static int Custom_Sum(IEnumerable<int> source)
+        public static int Custom_Sum(this IEnumerable<int> source)
         {
             int sum = 0;
 
@@ -143,7 +141,7 @@ namespace LectureDataStructures
 
             return sum;
         }
-        public static int Custom_Sum(IEnumerable<int> source, Predicate<int> predicate)
+        public static int Custom_Sum(this IEnumerable<int> source, Predicate<int> predicate)
         {
             int sum = 0;
 
@@ -157,22 +155,22 @@ namespace LectureDataStructures
 
             return sum;
         }
-        public static int Custom_Count(IEnumerable<int> source)
+        public static int Custom_Count<T>(this IEnumerable<T> source)
         {
             int count = 0;
 
-            foreach (int item in source)
+            foreach (var item in source)
             {
                 count++;
             }
 
             return count;
         }
-        public static int Custom_Count(IEnumerable<int> source, Predicate<int> predicate)
+        public static int Custom_Count<T>(this IEnumerable<T> source, Predicate<T> predicate)
         {
             int count = 0;
 
-            foreach (int item in source)
+            foreach (var item in source)
             {
                 if (predicate(item))
                 {
@@ -182,20 +180,20 @@ namespace LectureDataStructures
 
             return count;
         }
-        public static IEnumerable<int> Custom_Distinct(IEnumerable<int> source)
+        public static IEnumerable<T> Custom_Distinct<T>(this IEnumerable<T> source)
         {
-            HashSet<int> set = new();
+            HashSet<T> set = new();
 
-            foreach (int item in source)
+            foreach (var item in source)
             {
                 set.Add(item);
             }
 
             return set;
         }
-        public static IEnumerable<int> Custom_Reverse(IEnumerable<int> source)
+        public static IEnumerable<T> Custom_Reverse<T>(this IEnumerable<T> source)
         {
-            Stack<int> stack = new();
+            Stack<T> stack = new();
 
             foreach (var item in source)
             {
@@ -204,9 +202,9 @@ namespace LectureDataStructures
 
             return stack;
         }
-        public static IEnumerable<int> Custom_Reverse(IEnumerable<int> source, Func<int, bool> predicate)
+        public static IEnumerable<T> Custom_Reverse<T>(this IEnumerable<T> source, Func<T, bool> predicate)
         {
-            Stack<int> stack = new();
+            Stack<T> stack = new();
 
             foreach (var item in source)
             {
@@ -216,7 +214,7 @@ namespace LectureDataStructures
 
             return stack;
         }
-        public static bool Custom_Any(IEnumerable<int> source, Func<int, bool> predicate)
+        public static bool Custom_Any<T>(this IEnumerable<T> source, Func<T, bool> predicate)
         {
             foreach (var item in source)
             {
@@ -228,7 +226,7 @@ namespace LectureDataStructures
 
             return false;
         }
-        public static bool Custom_All(IEnumerable<int> source, Func<int, bool> predicate)
+        public static bool Custom_All<T>(this IEnumerable<T> source, Func<T, bool> predicate)
         {
             foreach (var item in source)
             {
