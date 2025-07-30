@@ -1,6 +1,7 @@
 ﻿using LectureVehiclesPractice;
 using System;
 using System.Collections.Generic;
+using System.IO.Pipelines;
 using System.Runtime.Intrinsics.Arm;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -239,38 +240,49 @@ namespace LectureDataStructures
             return true;
         }
 
-
-
-
-        //გადასაკეთებელი !!!!
-        public static int Custom_Max(List<int> intList)
+        public static T Custom_Max<T>(this IEnumerable<T> source) where T : IComparable<T>
         {
-            int max = intList[0];
+            var enumerator = source.GetEnumerator();
 
-            for (int i = 0; i < intList.Count; i++)
+            if (!enumerator.MoveNext())
+                throw new ArgumentException("Source can't be empty", nameof(source));
+
+            var max = enumerator.Current;
+
+            while (enumerator.MoveNext())
             {
-                if (intList[i] > max)
+                if (enumerator.Current.CompareTo(max) > 0)
                 {
-                    max = intList[i];
+                    max = enumerator.Current;
                 }
             }
 
             return max;
         }
-        public static int Custom_Min(List<int> intList)
-        {
-            int max = intList[0];
 
-            for (int i = 0; i < intList.Count; i++)
+
+        public static T Custom_Min<T>(this IEnumerable<T> source) where T : IComparable<T>
+        {
+            var enumerator = source.GetEnumerator();
+
+            if (!enumerator.MoveNext())
+                throw new ArgumentException("Source can't be empty", nameof(source));
+
+            var min = enumerator.Current;
+
+            while (enumerator.MoveNext())
             {
-                if (intList[i] < max)
+                if (enumerator.Current.CompareTo(min) < 0)
                 {
-                    max = intList[i];
+                    min = enumerator.Current;
                 }
             }
 
-            return max;
+            return min;
         }
+
+
+
         public static List<int> Custom_Take(List<int> intList, int count)
         {
             List<int> result = new();
