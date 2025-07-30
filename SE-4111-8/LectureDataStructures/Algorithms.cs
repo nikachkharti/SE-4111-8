@@ -181,9 +181,9 @@ namespace LectureDataStructures
 
             return count;
         }
-        public static IEnumerable<T> Custom_Distinct<T>(this IEnumerable<T> source)
+        public static IEnumerable<T> Custom_Distinct<T>(this IEnumerable<T> source, IEqualityComparer<T> equalityComparer = null)
         {
-            HashSet<T> set = new();
+            HashSet<T> set = new(equalityComparer);
 
             foreach (var item in source)
             {
@@ -239,7 +239,6 @@ namespace LectureDataStructures
 
             return true;
         }
-
         public static T Custom_Max<T>(this IEnumerable<T> source) where T : IComparable<T>
         {
             var enumerator = source.GetEnumerator();
@@ -259,8 +258,6 @@ namespace LectureDataStructures
 
             return max;
         }
-
-
         public static T Custom_Min<T>(this IEnumerable<T> source) where T : IComparable<T>
         {
             var enumerator = source.GetEnumerator();

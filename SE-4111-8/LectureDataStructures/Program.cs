@@ -25,13 +25,10 @@ namespace LectureDataStructures
             //    .Custom_FirstOrDefault(m => m.City >= 15 && m.City <= 23);
 
 
-            List<int> intList = new() { 1, 1, 1, 11, 2, -21, 30, 30, 7, -7 };
+            //List<int> intList = new() { 1, 1, 1, 11, 2, -21, 30, 30, 7, -7 };
             //List<string> stringList = new() { "Nika", "Giorgi", "Daviti" };
             //List<double> doubleList = new() { 10.1, 2.2, 3.1 };
             //List<string> listString = new() { "10.1", "2.2", "3.1" };
-
-            var result = intList.Custom_Min();
-
 
 
 
