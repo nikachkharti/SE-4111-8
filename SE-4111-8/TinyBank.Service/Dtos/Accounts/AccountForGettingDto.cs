@@ -8,5 +8,7 @@
         public decimal Balance { get; set; }
         public int CustomerId { get; set; }
         public string Destination { get; set; }
+
+        public override string ToString() => $"{Balance} {Currency}";
     }
 }
