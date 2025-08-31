@@ -17,6 +17,7 @@ namespace TinyBank.Repository.Implementations
 
         public List<Account> GetAccounts() => _accounts;
         public Account GetSingleAccount(int id) => _accounts.FirstOrDefault(a => a.Id == id);
+
         public int AddAccount(Account newAccount)
         {
             newAccount.Id = _accounts.Any() ? _accounts.Max(c => c.Id) + 1 : 1;
@@ -54,37 +55,16 @@ namespace TinyBank.Repository.Implementations
             if (!File.Exists(_filePath))
                 return new List<Account>();
 
-            var accounts = new List<Account>();
+            var accounts = FromJson(File.ReadAllText(_filePath));
 
-            using (var reader = new StreamReader(_filePath))
-            {
-                reader.ReadLine(); //Skip the line 1
-                string line = string.Empty;
-
-                while ((line = reader.ReadLine()) != null)
-                {
-                    var account = FromJson(line);
-                    if (account != null) // skip invalid lines
-                        accounts.Add(account);
-                }
-            }
-
-            return accounts;
+            return accounts ?? new List<Account>();
         }
-        private Account FromJson(string line) => JsonSerializer.Deserialize<Account>(line, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
-        private string ToJson(Account account) => JsonSerializer.Serialize(account, new JsonSerializerOptions() { WriteIndented = true });
-        private void SaveData()
-        {
-            using (var writer = new StreamWriter(_filePath, append: false)) // 'false' to overwrite the file
-            {
-                writer.WriteLine("Id,Iban,Currency,Balance,CustomerId,Destination");
-
-                foreach (var account in _accounts)
-                {
-                    writer.WriteLine(ToJson(account));
-                }
-            }
-        }
+        private List<Account> FromJson(string line) =>
+            JsonSerializer.Deserialize<List<Account>>(line, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        private string ToJson(List<Account> accounts) =>
+            JsonSerializer.Serialize(accounts, new JsonSerializerOptions() { WriteIndented = true });
+        private void SaveData() =>
+            File.WriteAllText(_filePath, ToJson(_accounts));
         #endregion
 
     }

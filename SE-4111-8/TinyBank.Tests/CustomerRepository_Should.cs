@@ -6,7 +6,7 @@ namespace TinyBank.Tests
 {
     public class CustomerRepository_Should
     {
-        private readonly string _filePath = @"C:\Users\User\Desktop\IT STEP\SE-4111-8\SE-4111-8\TinyBank.Tests\Data\Customers.csv";
+        private readonly string _filePath = @"C:\Users\User\Desktop\IT STEP\SE-4111-8\SE-4111-8\TinyBank.Tests\Data\Accounts.json";
         private readonly ICustomerRepository _customerRepository;
         public CustomerRepository_Should()
         {
