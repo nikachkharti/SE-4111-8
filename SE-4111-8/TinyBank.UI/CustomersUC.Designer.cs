@@ -49,16 +49,17 @@
             // 
             // customersList
             // 
-            customersList.Dock = DockStyle.Top;
+            customersList.Cursor = Cursors.Hand;
             customersList.FormattingEnabled = true;
-            customersList.Location = new Point(0, 0);
+            customersList.Location = new Point(498, 3);
             customersList.Name = "customersList";
-            customersList.Size = new Size(1057, 279);
+            customersList.Size = new Size(556, 879);
             customersList.TabIndex = 0;
             customersList.SelectedIndexChanged += customersList_SelectedIndexChanged;
             // 
             // modifyGroupBox
             // 
+            modifyGroupBox.BackColor = Color.White;
             modifyGroupBox.Controls.Add(clearFormButton);
             modifyGroupBox.Controls.Add(deleteCustomerButton);
             modifyGroupBox.Controls.Add(updateCustomerButton);
@@ -73,9 +74,9 @@
             modifyGroupBox.Controls.Add(phoneNumberValue);
             modifyGroupBox.Controls.Add(identityNumberValue);
             modifyGroupBox.Controls.Add(nameValue);
-            modifyGroupBox.Location = new Point(10, 287);
+            modifyGroupBox.Location = new Point(0, 0);
             modifyGroupBox.Name = "modifyGroupBox";
-            modifyGroupBox.Size = new Size(1039, 593);
+            modifyGroupBox.Size = new Size(492, 882);
             modifyGroupBox.TabIndex = 1;
             modifyGroupBox.TabStop = false;
             modifyGroupBox.Text = "Modify";
@@ -85,11 +86,11 @@
             clearFormButton.BackColor = Color.Gold;
             clearFormButton.Cursor = Cursors.Hand;
             clearFormButton.ForeColor = Color.Black;
-            clearFormButton.Location = new Point(519, 222);
+            clearFormButton.Location = new Point(14, 477);
             clearFormButton.Name = "clearFormButton";
-            clearFormButton.Size = new Size(62, 34);
+            clearFormButton.Size = new Size(139, 34);
             clearFormButton.TabIndex = 14;
-            clearFormButton.Text = "Clear";
+            clearFormButton.Text = "Clear Form";
             clearFormButton.UseVisualStyleBackColor = false;
             clearFormButton.Click += clearFormButton_Click;
             // 
@@ -98,7 +99,7 @@
             deleteCustomerButton.BackColor = Color.Crimson;
             deleteCustomerButton.Cursor = Cursors.Hand;
             deleteCustomerButton.ForeColor = Color.White;
-            deleteCustomerButton.Location = new Point(562, 317);
+            deleteCustomerButton.Location = new Point(159, 477);
             deleteCustomerButton.Name = "deleteCustomerButton";
             deleteCustomerButton.Size = new Size(168, 34);
             deleteCustomerButton.TabIndex = 15;
@@ -111,7 +112,7 @@
             updateCustomerButton.BackColor = Color.DeepSkyBlue;
             updateCustomerButton.Cursor = Cursors.Hand;
             updateCustomerButton.ForeColor = Color.Black;
-            updateCustomerButton.Location = new Point(388, 317);
+            updateCustomerButton.Location = new Point(162, 437);
             updateCustomerButton.Name = "updateCustomerButton";
             updateCustomerButton.Size = new Size(168, 34);
             updateCustomerButton.TabIndex = 16;
@@ -124,7 +125,7 @@
             addCustomerButton.BackColor = Color.SeaGreen;
             addCustomerButton.Cursor = Cursors.Hand;
             addCustomerButton.ForeColor = Color.White;
-            addCustomerButton.Location = new Point(240, 317);
+            addCustomerButton.Location = new Point(14, 437);
             addCustomerButton.Name = "addCustomerButton";
             addCustomerButton.Size = new Size(142, 34);
             addCustomerButton.TabIndex = 17;
@@ -138,15 +139,15 @@
             customerTypeValue.DropDownStyle = ComboBoxStyle.DropDownList;
             customerTypeValue.FormattingEnabled = true;
             customerTypeValue.Items.AddRange(new object[] { "Phyisical", "Legal" });
-            customerTypeValue.Location = new Point(519, 144);
+            customerTypeValue.Location = new Point(14, 282);
             customerTypeValue.Name = "customerTypeValue";
-            customerTypeValue.Size = new Size(258, 33);
+            customerTypeValue.Size = new Size(472, 33);
             customerTypeValue.TabIndex = 13;
             // 
             // customerTypeLabel
             // 
             customerTypeLabel.AutoSize = true;
-            customerTypeLabel.Location = new Point(519, 116);
+            customerTypeLabel.Location = new Point(14, 254);
             customerTypeLabel.Name = "customerTypeLabel";
             customerTypeLabel.Size = new Size(49, 25);
             customerTypeLabel.TabIndex = 8;
@@ -155,7 +156,7 @@
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Location = new Point(255, 194);
+            emailLabel.Location = new Point(14, 329);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new Size(54, 25);
             emailLabel.TabIndex = 9;
@@ -164,7 +165,7 @@
             // PhoneNumberLabel
             // 
             PhoneNumberLabel.AutoSize = true;
-            PhoneNumberLabel.Location = new Point(255, 118);
+            PhoneNumberLabel.Location = new Point(14, 192);
             PhoneNumberLabel.Name = "PhoneNumberLabel";
             PhoneNumberLabel.Size = new Size(62, 25);
             PhoneNumberLabel.TabIndex = 10;
@@ -173,7 +174,7 @@
             // identityNumberLabel
             // 
             identityNumberLabel.AutoSize = true;
-            identityNumberLabel.Location = new Point(519, 47);
+            identityNumberLabel.Location = new Point(14, 116);
             identityNumberLabel.Name = "identityNumberLabel";
             identityNumberLabel.Size = new Size(72, 25);
             identityNumberLabel.TabIndex = 11;
@@ -182,7 +183,7 @@
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new Point(255, 47);
+            nameLabel.Location = new Point(14, 54);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(59, 25);
             nameLabel.TabIndex = 12;
@@ -190,37 +191,37 @@
             // 
             // emailValue
             // 
-            emailValue.Location = new Point(255, 222);
+            emailValue.Location = new Point(14, 357);
             emailValue.Name = "emailValue";
-            emailValue.Size = new Size(258, 31);
+            emailValue.Size = new Size(472, 31);
             emailValue.TabIndex = 4;
             // 
             // phoneNumberValue
             // 
-            phoneNumberValue.Location = new Point(255, 146);
+            phoneNumberValue.Location = new Point(14, 220);
             phoneNumberValue.Name = "phoneNumberValue";
-            phoneNumberValue.Size = new Size(258, 31);
+            phoneNumberValue.Size = new Size(472, 31);
             phoneNumberValue.TabIndex = 5;
             // 
             // identityNumberValue
             // 
-            identityNumberValue.Location = new Point(519, 75);
+            identityNumberValue.Location = new Point(14, 144);
             identityNumberValue.Name = "identityNumberValue";
-            identityNumberValue.Size = new Size(258, 31);
+            identityNumberValue.Size = new Size(472, 31);
             identityNumberValue.TabIndex = 6;
             // 
             // nameValue
             // 
-            nameValue.Location = new Point(255, 75);
+            nameValue.Location = new Point(14, 82);
             nameValue.Name = "nameValue";
-            nameValue.Size = new Size(258, 31);
+            nameValue.Size = new Size(472, 31);
             nameValue.TabIndex = 7;
             // 
             // CustomersUC
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.White;
             Controls.Add(modifyGroupBox);
             Controls.Add(customersList);
             Name = "CustomersUC";
