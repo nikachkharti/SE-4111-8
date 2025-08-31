@@ -33,6 +33,7 @@ namespace TinyBank.UI
 
             #region SERVICE
             services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<IAccountService, AccountService>();
             #endregion
 
             services.AddSingleton<Main>();

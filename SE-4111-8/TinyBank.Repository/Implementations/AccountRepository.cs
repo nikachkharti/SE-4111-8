@@ -17,7 +17,6 @@ namespace TinyBank.Repository.Implementations
 
         public List<Account> GetAccounts() => _accounts;
         public Account GetSingleAccount(int id) => _accounts.FirstOrDefault(a => a.Id == id);
-
         public int AddAccount(Account newAccount)
         {
             newAccount.Id = _accounts.Any() ? _accounts.Max(c => c.Id) + 1 : 1;
@@ -47,6 +46,9 @@ namespace TinyBank.Repository.Implementations
 
             return account.Id;
         }
+        public List<Account> GetAccountsOfCustomer(int customerId) => _accounts
+            .Where(a => a.CustomerId == customerId)
+            .ToList();
 
 
         #region HELPERS
