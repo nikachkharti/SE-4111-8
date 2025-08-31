@@ -65,7 +65,8 @@ namespace TinyBank.Repository.Implementations
                 while ((line = reader.ReadLine()) != null)
                 {
                     var customer = FromCsv(line);
-                    customers.Add(customer);
+                    if (customer != null) // skip invalid lines
+                        customers.Add(customer);
                 }
             }
 

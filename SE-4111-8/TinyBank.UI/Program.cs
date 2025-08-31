@@ -28,6 +28,7 @@ namespace TinyBank.UI
 
             #region REPOSITORY
             services.AddScoped<ICustomerRepository>(sp => new CustomerRepository(Configuration.CustomersDB));
+            services.AddScoped<IAccountRepository>(sp => new AccountRepository(Configuration.AccountsDB));
             #endregion
 
             #region SERVICE
