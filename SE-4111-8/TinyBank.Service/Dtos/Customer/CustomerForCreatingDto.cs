@@ -1,6 +1,6 @@
 ﻿using TinyBank.Models;
 
-namespace TinyBank.Service.Dtos
+namespace TinyBank.Service.Dtos.Customer
 {
     public record CustomerForCreatingDto
     {

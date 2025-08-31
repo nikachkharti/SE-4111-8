@@ -1,8 +1,8 @@
 ﻿using TinyBank.Models;
 
-namespace TinyBank.Service.Dtos
+namespace TinyBank.Service.Dtos.Customer
 {
-    public record CustomerForUpdatingDto
+    public record CustomerForGettingDto
     {
         public int Id;
         public string Name;
@@ -10,5 +10,7 @@ namespace TinyBank.Service.Dtos
         public string PhoneNumber;
         public string Email;
         public CustomerType CustomerType;
+
+        public override string ToString() => $"{Id} {Name}";
     }
 }
