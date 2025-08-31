@@ -5,16 +5,18 @@ namespace TinyBank.UI
     public partial class Main : Form
     {
         private readonly ICustomerService _customerService;
+        private readonly IAccountService _accountService;
 
-        public Main(ICustomerService customerService)
+        public Main(ICustomerService customerService, IAccountService accountService)
         {
             InitializeComponent();
             _customerService = customerService;
+            _accountService = accountService;
         }
 
         private void customersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowUserControl(new CustomersUC(_customerService));
+            ShowUserControl(new CustomersUC(_customerService, _accountService));
             logoPictureBox.Visible = false;
         }
 

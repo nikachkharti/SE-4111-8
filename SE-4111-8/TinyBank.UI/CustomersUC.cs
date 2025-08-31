@@ -7,10 +7,13 @@ namespace TinyBank.UI
     public partial class CustomersUC : UserControl
     {
         private readonly ICustomerService _customerService;
-        public CustomersUC(ICustomerService customerService)
+        private readonly IAccountService _accountService;
+
+        public CustomersUC(ICustomerService customerService, IAccountService accountService)
         {
             InitializeComponent();
             _customerService = customerService;
+            _accountService = accountService;
         }
 
         #region EVENTS
@@ -92,6 +95,17 @@ namespace TinyBank.UI
                 MessageBox.Show($"Error updating customer: {ex.Message}");
             }
         }
+        private void showAccountsButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error showing accounts: {ex.Message}");
+            }
+        }
 
 
         #endregion
@@ -106,6 +120,9 @@ namespace TinyBank.UI
             phoneNumberValue.Text = model.PhoneNumber;
             customerTypeValue.Text = model.CustomerType.ToString();
             emailValue.Text = model.Email;
+
+            showAccountsButton.Visible = true;
+
         }
         private void ClearForm()
         {
@@ -114,6 +131,8 @@ namespace TinyBank.UI
             phoneNumberValue.Text = string.Empty;
             customerTypeValue.Text = string.Empty;
             emailValue.Text = string.Empty;
+
+            showAccountsButton.Visible = false;
         }
         private CustomerForCreatingDto GenerateCreateForm() => new CustomerForCreatingDto()
         {
@@ -138,6 +157,7 @@ namespace TinyBank.UI
             };
         }
         #endregion
+
 
 
     }

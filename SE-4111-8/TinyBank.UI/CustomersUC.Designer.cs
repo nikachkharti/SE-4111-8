@@ -30,6 +30,7 @@
         {
             customersList = new ListBox();
             modifyGroupBox = new GroupBox();
+            showAccountsButton = new Button();
             clearFormButton = new Button();
             deleteCustomerButton = new Button();
             updateCustomerButton = new Button();
@@ -60,6 +61,7 @@
             // modifyGroupBox
             // 
             modifyGroupBox.BackColor = Color.White;
+            modifyGroupBox.Controls.Add(showAccountsButton);
             modifyGroupBox.Controls.Add(clearFormButton);
             modifyGroupBox.Controls.Add(deleteCustomerButton);
             modifyGroupBox.Controls.Add(updateCustomerButton);
@@ -80,6 +82,19 @@
             modifyGroupBox.TabIndex = 1;
             modifyGroupBox.TabStop = false;
             modifyGroupBox.Text = "Modify";
+            // 
+            // showAccountsButton
+            // 
+            showAccountsButton.BackColor = Color.NavajoWhite;
+            showAccountsButton.Cursor = Cursors.Hand;
+            showAccountsButton.ForeColor = Color.Black;
+            showAccountsButton.Location = new Point(14, 517);
+            showAccountsButton.Name = "showAccountsButton";
+            showAccountsButton.Size = new Size(173, 34);
+            showAccountsButton.TabIndex = 14;
+            showAccountsButton.Text = "Show Accounts";
+            showAccountsButton.UseVisualStyleBackColor = false;
+            showAccountsButton.Click += showAccountsButton_Click;
             // 
             // clearFormButton
             // 
@@ -250,5 +265,6 @@
         private TextBox phoneNumberValue;
         private TextBox identityNumberValue;
         private TextBox nameValue;
+        private Button showAccountsButton;
     }
 }
