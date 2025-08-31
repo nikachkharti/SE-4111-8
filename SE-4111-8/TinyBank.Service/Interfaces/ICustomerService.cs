@@ -1,4 +1,4 @@
-﻿using TinyBank.Service.Dtos;
+﻿using TinyBank.Service.Dtos.Customer;
 
 namespace TinyBank.Service.Interfaces
 {

@@ -1,6 +1,6 @@
 ﻿using Mapster;
 using TinyBank.Models;
-using TinyBank.Service.Dtos;
+using TinyBank.Service.Dtos.Customer;
 
 namespace TinyBank.Service.Mapping
 {

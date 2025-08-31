@@ -1,7 +1,7 @@
 ﻿using Mapster;
 using TinyBank.Models;
 using TinyBank.Repository.Contracts;
-using TinyBank.Service.Dtos;
+using TinyBank.Service.Dtos.Customer;
 using TinyBank.Service.Interfaces;
 
 namespace TinyBank.Service.Implementations

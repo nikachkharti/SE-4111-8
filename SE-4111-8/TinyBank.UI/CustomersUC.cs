@@ -1,5 +1,5 @@
 ﻿using TinyBank.Models;
-using TinyBank.Service.Dtos;
+using TinyBank.Service.Dtos.Customer;
 using TinyBank.Service.Interfaces;
 
 namespace TinyBank.UI
