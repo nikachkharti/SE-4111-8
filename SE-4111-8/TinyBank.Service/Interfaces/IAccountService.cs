@@ -4,6 +4,8 @@ namespace TinyBank.Service.Interfaces
 {
     public interface IAccountService
     {
-        List<AccountForGettingDto> GetAllAccountsOfCustomer(int customerId)
+        List<AccountForGettingDto> GetAllAccountsOfCustomer(int customerId);
+        AccountForGettingDto GetSingleAccount(int accountId);
+        int AddAccount(AccountForCreatingDto accountForCreatingDto);
     }
 }
