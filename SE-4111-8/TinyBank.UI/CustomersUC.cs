@@ -8,6 +8,7 @@ namespace TinyBank.UI
     {
         private readonly ICustomerService _customerService;
         private readonly IAccountService _accountService;
+        private int _customerId = default;
 
         public CustomersUC(ICustomerService customerService, IAccountService accountService)
         {
@@ -26,7 +27,10 @@ namespace TinyBank.UI
         {
             var selectedCustomer = customersList.SelectedItem as CustomerForGettingDto;
             if (selectedCustomer != null)
+            {
                 FillForm(selectedCustomer);
+                _customerId = selectedCustomer.Id;
+            }
         }
         private void addCustomerButton_Click(object sender, EventArgs e)
         {
@@ -99,7 +103,11 @@ namespace TinyBank.UI
         {
             try
             {
-
+                this.Controls.Clear();
+                AccountsOfCustomerUC control = new(_accountService, _customerId);
+                control.Dock = DockStyle.Fill;
+                this.Controls.Add(control);
+                control.BringToFront();
             }
             catch (Exception ex)
             {
@@ -156,6 +164,7 @@ namespace TinyBank.UI
                 Email = emailValue.Text
             };
         }
+
         #endregion
 
 
