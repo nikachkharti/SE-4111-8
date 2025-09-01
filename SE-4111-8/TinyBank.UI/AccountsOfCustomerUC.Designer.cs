@@ -129,6 +129,7 @@
             addAccountButton.TabIndex = 18;
             addAccountButton.Text = "Add Account";
             addAccountButton.UseVisualStyleBackColor = false;
+            addAccountButton.Click += addAccountButton_Click;
             // 
             // destinationLabel
             // 
