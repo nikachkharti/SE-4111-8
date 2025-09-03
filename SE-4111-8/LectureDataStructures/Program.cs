@@ -32,7 +32,9 @@ namespace LectureDataStructures
 
 
 
+            List<int> intList = new() { 1, 2, 3 };
 
+            var result = intList.Custom_Where(x => x % 2 != 0);
 
 
 

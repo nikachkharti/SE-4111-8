@@ -1,11 +1,4 @@
-﻿using LectureVehiclesPractice;
-using System;
-using System.Collections.Generic;
-using System.IO.Pipelines;
-using System.Runtime.Intrinsics.Arm;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace LectureDataStructures
+﻿namespace LectureDataStructures
 {
     //Predicate --> შეუძლია მიინიჭოს ისეთი მეთოდი რომელიც პარამეტრად იღებს რაიმე ტიპს და აბრუნებს bool - ს
     //Func --> შეუძლია მიინიჭოს ისეთი მეთოდი რომელიც პარამეტრად იღებს რაიმე ტიპს და დასაბრუნებელი ტიპს ვუთითებთ ჩვენ
@@ -49,37 +42,29 @@ namespace LectureDataStructures
         }
         public static IEnumerable<TDestination> Custom_Select<TSource, TDestination>(this IEnumerable<TSource> source, Func<TSource, TDestination> selector)
         {
-            List<TDestination> result = new();
-
             foreach (var item in source)
             {
-                result.Add(selector(item));
+                yield return selector(item);
             }
-
-            return result;
         }
-        public static void Custom_Foreach<T>(this IEnumerable<T> source)
+        public static IEnumerable<T> Custom_Foreach<T>(this IEnumerable<T> source)
         {
             var enumerator = source.GetEnumerator();
 
             while (enumerator.MoveNext())
             {
-                Console.WriteLine(enumerator.Current);
+                yield return enumerator.Current;
             }
         }
         public static IEnumerable<T> Custom_Where<T>(this IEnumerable<T> source, Func<T, bool> predicate)
         {
-            List<T> result = new();
-
             foreach (var item in source)
             {
                 if (predicate(item))
                 {
-                    result.Add(item);
+                    yield return item;
                 }
             }
-
-            return result;
         }
         public static int Custom_FirstIndex<T>(this IEnumerable<T> source, Func<T, bool> predicate)
         {
